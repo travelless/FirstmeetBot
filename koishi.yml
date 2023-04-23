@@ -47,3 +47,7 @@ plugins:
       root: .
   ~puppeteer:uax75r: null
   chatgpt:4iaoup: null
+  weather:6auioz: null
+  cron:20cua9: null
+  special:thrcf5:
+    $filter: {}

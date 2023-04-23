@@ -307,11 +307,11 @@ var src_default = defineComponent({
 });
 
 // node_modules/@koishijs/client/client/components/common/index.ts
-import Button from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/common/k-button.vue";
-import Filter from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/common/k-filter.vue";
-import FilterButton from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/common/k-filter-button.vue";
-import Form from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/common/k-form.vue";
-import Tab from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/common/k-tab.vue";
+import Button from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/common/k-button.vue";
+import Filter from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/common/k-filter.vue";
+import FilterButton from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/common/k-filter-button.vue";
+import Form from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/common/k-form.vue";
+import Tab from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/common/k-tab.vue";
 function common_default(app) {
   app.component("k-button", Button);
   app.component("k-filter", Filter);
@@ -321,14 +321,14 @@ function common_default(app) {
 }
 
 // node_modules/schemastery-vue/src/index.ts
-import Schema from "E:/world/codeSpace/gpptbot/node_modules/schemastery-vue/src/schema.vue";
+import Schema from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/schema.vue";
 
 // node_modules/schemastery-vue/src/icons/index.ts
-import IconClose from "E:/world/codeSpace/gpptbot/node_modules/schemastery-vue/src/icons/close.vue";
-import IconEllipsis from "E:/world/codeSpace/gpptbot/node_modules/schemastery-vue/src/icons/ellipsis.vue";
-import IconExternal from "E:/world/codeSpace/gpptbot/node_modules/schemastery-vue/src/icons/external.vue";
-import IconEyeSlash from "E:/world/codeSpace/gpptbot/node_modules/schemastery-vue/src/icons/eye-slash.vue";
-import IconEye from "E:/world/codeSpace/gpptbot/node_modules/schemastery-vue/src/icons/eye.vue";
+import IconClose from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/icons/close.vue";
+import IconEllipsis from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/icons/ellipsis.vue";
+import IconExternal from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/icons/external.vue";
+import IconEyeSlash from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/icons/eye-slash.vue";
+import IconEye from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/icons/eye.vue";
 
 // node_modules/cosmokit/lib/index.mjs
 var __defProp2 = Object.defineProperty;
@@ -1138,7 +1138,7 @@ function src_default2(app) {
 }
 
 // node_modules/@koishijs/client/client/components/index.ts
-import ChatImage from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/chat/image.vue";
+import ChatImage from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/chat/image.vue";
 
 // node_modules/@koishijs/client/client/components/icons/index.ts
 var icons_exports = {};
@@ -1146,44 +1146,44 @@ __export(icons_exports, {
   install: () => install,
   register: () => register
 });
-import Default from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/activity/default.vue";
-import Ellipsis from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/activity/ellipsis.vue";
-import Home from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/activity/home.vue";
-import Moon from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/activity/moon.vue";
-import Sun from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/activity/sun.vue";
-import BoxOpen from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/box-open.vue";
-import CheckFull from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/check-full.vue";
-import ChevronDown from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/chevron-down.vue";
-import ChevronLeft from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/chevron-left.vue";
-import ChevronRight from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/chevron-right.vue";
-import ChevronUp from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/chevron-up.vue";
-import ClipboardList from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/clipboard-list.vue";
-import Delete from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/delete.vue";
-import Edit from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/edit.vue";
-import ExclamationFull from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/exclamation-full.vue";
-import Expand from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/expand.vue";
-import FileArchive from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/file-archive.vue";
-import Filter2 from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/filter.vue";
-import GitHub from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/github.vue";
-import GitLab from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/gitlab.vue";
-import InfoFull from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/info-full.vue";
-import Koishi from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/koishi.vue";
-import Link from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/link.vue";
-import PaperPlane from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/paper-plane.vue";
-import QuestionEmpty from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/question-empty.vue";
-import Redo from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/redo.vue";
-import Search from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/search.vue";
-import SearchMinus from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/search-minus.vue";
-import SearchPlus from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/search-plus.vue";
-import StarEmpty from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/star-empty.vue";
-import StarFull from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/star-full.vue";
-import Start from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/start.vue";
-import Tag from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/tag.vue";
-import TimesFull from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/times-full.vue";
-import Tools from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/tools.vue";
-import Undo from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/undo.vue";
-import User from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/svg/user.vue";
-import "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/icons/style.scss";
+import Default from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/activity/default.vue";
+import Ellipsis from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/activity/ellipsis.vue";
+import Home from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/activity/home.vue";
+import Moon from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/activity/moon.vue";
+import Sun from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/activity/sun.vue";
+import BoxOpen from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/box-open.vue";
+import CheckFull from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/check-full.vue";
+import ChevronDown from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/chevron-down.vue";
+import ChevronLeft from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/chevron-left.vue";
+import ChevronRight from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/chevron-right.vue";
+import ChevronUp from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/chevron-up.vue";
+import ClipboardList from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/clipboard-list.vue";
+import Delete from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/delete.vue";
+import Edit from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/edit.vue";
+import ExclamationFull from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/exclamation-full.vue";
+import Expand from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/expand.vue";
+import FileArchive from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/file-archive.vue";
+import Filter2 from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/filter.vue";
+import GitHub from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/github.vue";
+import GitLab from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/gitlab.vue";
+import InfoFull from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/info-full.vue";
+import Koishi from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/koishi.vue";
+import Link from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/link.vue";
+import PaperPlane from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/paper-plane.vue";
+import QuestionEmpty from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/question-empty.vue";
+import Redo from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/redo.vue";
+import Search from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/search.vue";
+import SearchMinus from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/search-minus.vue";
+import SearchPlus from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/search-plus.vue";
+import StarEmpty from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/star-empty.vue";
+import StarFull from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/star-full.vue";
+import Start from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/start.vue";
+import Tag from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/tag.vue";
+import TimesFull from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/times-full.vue";
+import Tools from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/tools.vue";
+import Undo from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/undo.vue";
+import User from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/svg/user.vue";
+import "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/icons/style.scss";
 var registry = {};
 register("activity:default", Default);
 register("activity:ellipsis", Ellipsis);
@@ -1240,14 +1240,14 @@ function install(app) {
 }
 
 // node_modules/@koishijs/client/client/components/layout/index.ts
-import Layout from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/layout/k-layout.vue";
-import Status from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/layout/k-status.vue";
-import CardNumeric from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/layout/card-numeric.vue";
-import Card from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/layout/card.vue";
-import Content from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/layout/content.vue";
-import Empty from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/layout/empty.vue";
-import TabGroup from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/layout/tab-group.vue";
-import TabItem from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/layout/tab-item.vue";
+import Layout from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/layout/k-layout.vue";
+import Status from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/layout/k-status.vue";
+import CardNumeric from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/layout/card-numeric.vue";
+import Card from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/layout/card.vue";
+import Content from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/layout/content.vue";
+import Empty from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/layout/empty.vue";
+import TabGroup from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/layout/tab-group.vue";
+import TabItem from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/layout/tab-item.vue";
 
 // node_modules/@koishijs/client/client/components/layout/utils.ts
 var isLeftAsideOpen = ref(false);
@@ -1265,9 +1265,9 @@ function layout_default(app) {
 }
 
 // node_modules/@koishijs/client/client/components/notice/index.ts
-import Badge from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/notice/badge.vue";
-import Comment2 from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/notice/comment.vue";
-import Hint from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/notice/hint.vue";
+import Badge from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/notice/badge.vue";
+import Comment2 from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/notice/comment.vue";
+import Hint from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/notice/hint.vue";
 function notice_default(app) {
   app.component("k-badge", Badge);
   app.component("k-comment", Comment2);
@@ -1293,16 +1293,16 @@ var slot_default = defineComponent({
 });
 
 // node_modules/@koishijs/client/client/components/index.ts
-import "E:/world/codeSpace/gpptbot/node_modules/element-plus/dist/index.css";
+import "E:/world/codeSpace/gptbot/node_modules/element-plus/dist/index.css";
 
 // node_modules/@satorijs/components/src/chat/index.ts
-import ChatInput from "E:/world/codeSpace/gpptbot/node_modules/@satorijs/components/src/chat/input.vue";
-import MessageContent from "E:/world/codeSpace/gpptbot/node_modules/@satorijs/components/src/chat/content.vue";
+import ChatInput from "E:/world/codeSpace/gptbot/node_modules/@satorijs/components/src/chat/input.vue";
+import MessageContent from "E:/world/codeSpace/gptbot/node_modules/@satorijs/components/src/chat/content.vue";
 
 // node_modules/@satorijs/components/src/popper/index.ts
-import Dropdown from "E:/world/codeSpace/gpptbot/node_modules/@satorijs/components/src/popper/dropdown.vue";
-import Popper from "E:/world/codeSpace/gpptbot/node_modules/@satorijs/components/src/popper/popper.vue";
-import Tooltip from "E:/world/codeSpace/gpptbot/node_modules/@satorijs/components/src/popper/tooltip.vue";
+import Dropdown from "E:/world/codeSpace/gptbot/node_modules/@satorijs/components/src/popper/dropdown.vue";
+import Popper from "E:/world/codeSpace/gptbot/node_modules/@satorijs/components/src/popper/popper.vue";
+import Tooltip from "E:/world/codeSpace/gptbot/node_modules/@satorijs/components/src/popper/tooltip.vue";
 
 // node_modules/@satorijs/components/src/popper/shared.ts
 var injections;
@@ -1376,7 +1376,7 @@ var VirtualItem = defineComponent({
 var item_default = VirtualItem;
 
 // node_modules/@satorijs/components/src/virtual/index.ts
-import VirtualList from "E:/world/codeSpace/gpptbot/node_modules/@satorijs/components/src/virtual/list.vue";
+import VirtualList from "E:/world/codeSpace/gptbot/node_modules/@satorijs/components/src/virtual/list.vue";
 
 // node_modules/@koishijs/client/client/components/index.ts
 var loading = ElLoading.service;
@@ -1394,7 +1394,7 @@ function components_default(app) {
 }
 
 // node_modules/@koishijs/client/client/index.ts
-import Overlay from "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/components/chat/overlay.vue";
+import Overlay from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/chat/overlay.vue";
 
 // node_modules/@koishijs/client/client/loader.ts
 function defineExtension(callback) {
@@ -2244,7 +2244,7 @@ var Context3 = class extends Context2 {
 };
 
 // node_modules/@koishijs/client/client/index.ts
-import "E:/world/codeSpace/gpptbot/node_modules/@koishijs/client/client/styles/index.scss";
+import "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/styles/index.scss";
 var client_default = components_default;
 var router = createRouter({
   history: createWebHistory(config.uiPath),

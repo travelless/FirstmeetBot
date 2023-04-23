@@ -13,10 +13,10 @@ export async function askChatGPT(requestMessage) {
     let response: any = await axios({
       url: 'https://api.openai-proxy.com/v1/chat/completions',
       method: "POST",
-      timeout: 100000,
+      timeout: 50000,
       data: params,
       headers: {
-        Authorization: 'Bearer ' + '',
+        Authorization: 'Bearer ' + process.env.OPENAI_TOKEN,
         "Content-Type": "application/json",
         Accept: "application/json",
       },

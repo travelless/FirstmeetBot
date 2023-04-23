@@ -2,6 +2,12 @@
   "files": [],
   "references": [
     {
+      "path": "./external/weather"
+    },
+    {
+      "path": "./external/special"
+    },
+    {
       "path": "./external/chatgpt"
     }
   ]
