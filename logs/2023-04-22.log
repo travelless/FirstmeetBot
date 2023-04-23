@@ -1,0 +1,128 @@
+[38;5;8m2023-04-22 14:21:41[0m [I] [38;5;78;1mapp[0m [38;5;15;1mKoishi/4.12.5[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:entry[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:basic[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mcommands[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mhelp[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlocales[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mrate-limit[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:console[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78manalytics[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mconsole[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdataview[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mexplorer[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlogger[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78minsight[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mmarket[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78msandbox[0m
+[38;5;8m2023-04-22 14:21:42[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mstatus[0m
+[38;5;8m2023-04-22 14:21:43[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:storage[0m
+[38;5;8m2023-04-22 14:21:43[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdatabase-sqlite[0m
+[38;5;8m2023-04-22 14:21:43[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78massets-local[0m
+[38;5;8m2023-04-22 14:21:43[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:adapter[0m
+[38;5;8m2023-04-22 14:21:43[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78madapter-onebot:1[0m
+[38;5;8m2023-04-22 14:21:43[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgocqhttp[0m
+[38;5;8m2023-04-22 14:21:43[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:develop[0m
+[38;5;8m2023-04-22 14:21:43[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mhmr[0m
+[38;5;8m2023-04-22 14:21:43[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mchatgpt:4iaoup[0m
+[38;5;8m2023-04-22 14:21:43[0m [I] [38;5;204;1massets[0m missing config "selfUrl", fallback to "file:" scheme
+[38;5;8m2023-04-22 14:21:43[0m [I] [38;5;78;1mapp[0m server listening at [38;5;78mhttp://127.0.0.1:5140[0m
+[38;5;8m2023-04-22 14:59:29[0m [W] [38;5;129;1msession[0m TypeError: Invalid content: AxiosError: timeout of 10000ms exceeded
+                            at toElement (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:16:11)
+                            at toElementArray (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:24:13)
+                            at Function.normalize (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:115:44)
+                            at OneBotMessenger.send (E:\world\codeSpace\gpptbot\node_modules\@satorijs\core\src\message.ts:41:37)
+                            at OneBotBot.sendMessage (E:\world\codeSpace\gpptbot\node_modules\@satorijs\adapter-onebot\src\bot\base.ts:13:67)
+                            at Session2.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:116:21)
+                            at Session2.import_koishi2.Session.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\plugin-analytics\src\stats.ts:48:15)
+                            at <anonymous> (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:393:18)
+                            at runNextTicks (node:internal/process/task_queues:60:5)
+                            at listOnTimeout (node:internal/timers:538:9)
+[38;5;8m2023-04-22 15:00:36[0m [W] [38;5;129;1msession[0m TypeError: Invalid content: AxiosError: Request failed with status code 502
+                            at toElement (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:16:11)
+                            at toElementArray (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:24:13)
+                            at Function.normalize (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:115:44)
+                            at OneBotMessenger.send (E:\world\codeSpace\gpptbot\node_modules\@satorijs\core\src\message.ts:41:37)
+                            at OneBotBot.sendMessage (E:\world\codeSpace\gpptbot\node_modules\@satorijs\adapter-onebot\src\bot\base.ts:13:67)
+                            at Session2.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:116:21)
+                            at Session2.import_koishi2.Session.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\plugin-analytics\src\stats.ts:48:15)
+                            at <anonymous> (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:393:18)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Session2.withScope (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:266:14)
+[38;5;8m2023-04-22 15:01:12[0m [W] [38;5;129;1msession[0m TypeError: Invalid content: AxiosError: Request failed with status code 502
+                            at toElement (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:16:11)
+                            at toElementArray (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:24:13)
+                            at Function.normalize (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:115:44)
+                            at OneBotMessenger.send (E:\world\codeSpace\gpptbot\node_modules\@satorijs\core\src\message.ts:41:37)
+                            at OneBotBot.sendMessage (E:\world\codeSpace\gpptbot\node_modules\@satorijs\adapter-onebot\src\bot\base.ts:13:67)
+                            at Session2.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:116:21)
+                            at Session2.import_koishi2.Session.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\plugin-analytics\src\stats.ts:48:15)
+                            at <anonymous> (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:393:18)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Session2.withScope (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:266:14)
+[38;5;8m2023-04-22 15:01:53[0m [W] [38;5;129;1msession[0m TypeError: Invalid content: AxiosError: timeout of 10000ms exceeded
+                            at toElement (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:16:11)
+                            at toElementArray (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:24:13)
+                            at Function.normalize (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:115:44)
+                            at OneBotMessenger.send (E:\world\codeSpace\gpptbot\node_modules\@satorijs\core\src\message.ts:41:37)
+                            at OneBotBot.sendMessage (E:\world\codeSpace\gpptbot\node_modules\@satorijs\adapter-onebot\src\bot\base.ts:13:67)
+                            at Session2.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:116:21)
+                            at Session2.import_koishi2.Session.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\plugin-analytics\src\stats.ts:48:15)
+                            at <anonymous> (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:393:18)
+                            at runNextTicks (node:internal/process/task_queues:60:5)
+                            at listOnTimeout (node:internal/timers:538:9)
+[38;5;8m2023-04-22 15:04:39[0m [W] [38;5;129;1msession[0m TypeError: Invalid content: AxiosError: timeout of 10000ms exceeded
+                            at toElement (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:16:11)
+                            at toElementArray (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:24:13)
+                            at Function.normalize (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:115:44)
+                            at OneBotMessenger.send (E:\world\codeSpace\gpptbot\node_modules\@satorijs\core\src\message.ts:41:37)
+                            at OneBotBot.sendMessage (E:\world\codeSpace\gpptbot\node_modules\@satorijs\adapter-onebot\src\bot\base.ts:13:67)
+                            at Session2.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:116:21)
+                            at Session2.import_koishi2.Session.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\plugin-analytics\src\stats.ts:48:15)
+                            at <anonymous> (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:393:18)
+                            at runNextTicks (node:internal/process/task_queues:60:5)
+                            at listOnTimeout (node:internal/timers:538:9)
+[38;5;8m2023-04-22 15:05:15[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\chatgpt\src\index.ts[0m
+[38;5;8m2023-04-22 18:49:21[0m [W] [38;5;129;1msession[0m TypeError: Invalid content: AxiosError: Request failed with status code 502
+                            at toElement (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:16:11)
+                            at toElementArray (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:24:13)
+                            at Function.normalize (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:115:44)
+                            at OneBotMessenger.send (E:\world\codeSpace\gpptbot\node_modules\@satorijs\core\src\message.ts:41:37)
+                            at OneBotBot.sendMessage (E:\world\codeSpace\gpptbot\node_modules\@satorijs\adapter-onebot\src\bot\base.ts:13:67)
+                            at Session2.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:116:21)
+                            at Session2.import_koishi2.Session.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\plugin-analytics\src\stats.ts:48:15)
+                            at <anonymous> (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:393:18)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Session2.withScope (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:266:14)
+[38;5;8m2023-04-22 18:51:00[0m [W] [38;5;129;1msession[0m TypeError: Invalid content: AxiosError: Request failed with status code 502
+                            at toElement (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:16:11)
+                            at toElementArray (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:24:13)
+                            at Function.normalize (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:115:44)
+                            at OneBotMessenger.send (E:\world\codeSpace\gpptbot\node_modules\@satorijs\core\src\message.ts:41:37)
+                            at OneBotBot.sendMessage (E:\world\codeSpace\gpptbot\node_modules\@satorijs\adapter-onebot\src\bot\base.ts:13:67)
+                            at Session2.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:116:21)
+                            at Session2.import_koishi2.Session.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\plugin-analytics\src\stats.ts:48:15)
+                            at <anonymous> (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:393:18)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Session2.withScope (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:266:14)
+[38;5;8m2023-04-22 19:06:40[0m [W] [38;5;129;1msession[0m TypeError: Invalid content: AxiosError: Request failed with status code 502
+                            at toElement (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:16:11)
+                            at toElementArray (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:24:13)
+                            at Function.normalize (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:115:44)
+                            at OneBotMessenger.send (E:\world\codeSpace\gpptbot\node_modules\@satorijs\core\src\message.ts:41:37)
+                            at OneBotBot.sendMessage (E:\world\codeSpace\gpptbot\node_modules\@satorijs\adapter-onebot\src\bot\base.ts:13:67)
+                            at Session2.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:116:21)
+                            at Session2.import_koishi2.Session.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\plugin-analytics\src\stats.ts:48:15)
+                            at <anonymous> (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:393:18)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Session2.withScope (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:266:14)
+[38;5;8m2023-04-22 20:07:29[0m [W] [38;5;129;1msession[0m TypeError: Invalid content: AxiosError: Request failed with status code 502
+                            at toElement (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:16:11)
+                            at toElementArray (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:24:13)
+                            at Function.normalize (E:\world\codeSpace\gpptbot\node_modules\@satorijs\element\src\index.ts:115:44)
+                            at OneBotMessenger.send (E:\world\codeSpace\gpptbot\node_modules\@satorijs\core\src\message.ts:41:37)
+                            at OneBotBot.sendMessage (E:\world\codeSpace\gpptbot\node_modules\@satorijs\adapter-onebot\src\bot\base.ts:13:67)
+                            at Session2.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:116:21)
+                            at Session2.import_koishi2.Session.send (E:\world\codeSpace\gpptbot\node_modules\@koishijs\plugin-analytics\src\stats.ts:48:15)
+                            at <anonymous> (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:393:18)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Session2.withScope (E:\world\codeSpace\gpptbot\node_modules\@koishijs\core\src\session.ts:266:14)
