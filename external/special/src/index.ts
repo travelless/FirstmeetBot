@@ -9,28 +9,28 @@ export interface Config {}
 export const Config: Schema<Config> = Schema.object({})
 
 export function apply(ctx: Context) {
-  let special_id = process.env.SPECIAL_ID
-  ctx.middleware(async (session, next) => {
-    if(session.userId == "2022742378") {
-      let weather = (await weatherQuery("杭州")).forecasts[0]
-      let time = getTime(weather.casts[0].week)
-      let message = `<>   
-                  <p> xx同学 早安  </p>
-                  <p>时间： ${time} </p> 
-                  <p>地区： ${weather.city}</p> 
-                  <p>今日天气： </p>
-                  <p>          白天-${weather.casts[0].dayweather}  晚上-${weather.casts[0].nightweather}</p>
-                  <p>          温度 ${weather.casts[0].nighttemp}-${weather.casts[0].daytemp} ℃</p>
-                  <p>          风力 ${weather.casts[0].daywind} 级</p>
-                  <p>明日天气：</p>
-                  <p>          白天-${weather.casts[1].dayweather}  晚上-${weather.casts[1].nightweather}</p>
-                  <p>          温度 ${weather.casts[1].nighttemp}-${weather.casts[1].daytemp} ℃</p>
-                  <p>          风力 ${weather.casts[1].daywind} 级</p> 
-                  </>`
-      ctx.bots[0].sendPrivateMessage("2022742378", message)
-      await next()
-    }
-  })
+  // let special_id = process.env.SPECIAL_ID
+  // ctx.middleware(async (session, next) => {
+  //   if(session.userId == "2022742378") {
+  //     let weather = (await weatherQuery("杭州")).forecasts[0]
+  //     let time = getTime(weather.casts[0].week)
+  //     let message = `<>   
+  //                 <p> xx同学 早安  </p>
+  //                 <p>时间： ${time} </p> 
+  //                 <p>地区： ${weather.city}</p> 
+  //                 <p>今日天气： </p>
+  //                 <p>          白天-${weather.casts[0].dayweather}  晚上-${weather.casts[0].nightweather}</p>
+  //                 <p>          温度 ${weather.casts[0].nighttemp}-${weather.casts[0].daytemp} ℃</p>
+  //                 <p>          风力 ${weather.casts[0].daywind} 级</p>
+  //                 <p>明日天气：</p>
+  //                 <p>          白天-${weather.casts[1].dayweather}  晚上-${weather.casts[1].nightweather}</p>
+  //                 <p>          温度 ${weather.casts[1].nighttemp}-${weather.casts[1].daytemp} ℃</p>
+  //                 <p>          风力 ${weather.casts[1].daywind} 级</p> 
+  //                 </>`
+  //     ctx.bots[0].sendPrivateMessage("2022742378", message)
+  //     await next()
+  //   }
+  // })
 
   
   ctx.cron('0 30 7 * * *', async () => {
