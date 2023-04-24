@@ -2348,3 +2348,235 @@
 [38;5;8m2023-04-24 20:10:13[0m [I] [38;5;204;1massets[0m missing config "selfUrl", fallback to "file:" scheme
 [38;5;8m2023-04-24 20:10:13[0m [I] [38;5;78;1mapp[0m server listening at [38;5;78mhttp://127.0.0.1:5140[0m
 [38;5;8m2023-04-24 20:10:13[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mspecial:thrcf5[0m
+[38;5;8m2023-04-24 20:30:15[0m [I] [38;5;78;1mapp[0m [38;5;15;1mKoishi/4.12.5[0m
+[38;5;8m2023-04-24 20:30:15[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:entry[0m
+[38;5;8m2023-04-24 20:30:15[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:basic[0m
+[38;5;8m2023-04-24 20:30:15[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mcommands[0m
+[38;5;8m2023-04-24 20:30:15[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlocales[0m
+[38;5;8m2023-04-24 20:30:15[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mhelp[0m
+[38;5;8m2023-04-24 20:30:15[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78manalytics[0m
+[38;5;8m2023-04-24 20:30:15[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mrate-limit[0m
+[38;5;8m2023-04-24 20:30:15[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:console[0m
+[38;5;8m2023-04-24 20:30:15[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdataview[0m
+[38;5;8m2023-04-24 20:30:15[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mexplorer[0m
+[38;5;8m2023-04-24 20:30:15[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mconsole[0m
+[38;5;8m2023-04-24 20:30:16[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mlogger[0m
+[38;5;8m2023-04-24 20:30:16[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78minsight[0m
+[38;5;8m2023-04-24 20:30:16[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mmarket[0m
+[38;5;8m2023-04-24 20:30:16[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78msandbox[0m
+[38;5;8m2023-04-24 20:30:16[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mstatus[0m
+[38;5;8m2023-04-24 20:30:16[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:storage[0m
+[38;5;8m2023-04-24 20:30:16[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:adapter[0m
+[38;5;8m2023-04-24 20:30:16[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78massets-local[0m
+[38;5;8m2023-04-24 20:30:16[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mdatabase-sqlite[0m
+[38;5;8m2023-04-24 20:30:16[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78madapter-onebot:1[0m
+[38;5;8m2023-04-24 20:30:16[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgocqhttp[0m
+[38;5;8m2023-04-24 20:30:16[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mchatgpt:4iaoup[0m
+[38;5;8m2023-04-24 20:30:16[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mhmr[0m
+[38;5;8m2023-04-24 20:30:16[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mgroup:develop[0m
+[38;5;8m2023-04-24 20:30:17[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mweather:6auioz[0m
+[38;5;8m2023-04-24 20:30:17[0m [I] [38;5;78;1mapp[0m server listening at [38;5;78mhttp://127.0.0.1:5140[0m
+[38;5;8m2023-04-24 20:30:17[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mcron:20cua9[0m
+[38;5;8m2023-04-24 20:30:17[0m [I] [38;5;204;1massets[0m missing config "selfUrl", fallback to "file:" scheme
+[38;5;8m2023-04-24 20:30:17[0m [I] [38;5;78;1mapp[0m apply plugin [38;5;78mspecial:thrcf5[0m
+[38;5;8m2023-04-24 20:30:19[0m [W] [38;5;215;1mcommand[0m weather 邢台
+                        TypeError: Cannot read properties of undefined (reading '0')
+                            at _Command.<anonymous> (e:\world\codeSpace\gptbot\external\weather\src\index.ts:20:30)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Array.<anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:285:14)
+                            at _Command.execute (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:301:22)
+                            at <anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:388:22)
+                            at Session2.withScope (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:266:14)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+                            at Processor._handleMessage (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:323:22)
+[38;5;8m2023-04-24 20:30:19[0m [W] [38;5;215;1mcommand[0m weather 邢台
+                        TypeError: Cannot read properties of undefined (reading '0')
+                            at _Command.<anonymous> (e:\world\codeSpace\gptbot\external\weather\src\index.ts:20:30)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Array.<anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:285:14)
+                            at _Command.execute (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:301:22)
+                            at <anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:388:22)
+                            at Session2.withScope (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:266:14)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+                            at Processor._handleMessage (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:323:22)
+[38;5;8m2023-04-24 20:30:41[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:30:45[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:30:49[0m [W] [38;5;215;1mcommand[0m weather 邢台
+                        TypeError: Cannot read properties of undefined (reading '0')
+                            at _Command.<anonymous> (e:\world\codeSpace\gptbot\external\weather\src\index.ts:21:30)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Array.<anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:285:14)
+                            at _Command.execute (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:301:22)
+                            at <anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:388:22)
+                            at Session2.withScope (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:266:14)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+                            at Processor._handleMessage (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:323:22)
+[38;5;8m2023-04-24 20:31:32[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:31:42[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:31:45[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:31:49[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:31:52[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:32:02[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m43[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m1[39m, line: [33m23[39m, lineText: [32m'                    <p>时间： ${weather.} </p> '[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Expected identifier but found "}"'[39m }
+[38;5;8m2023-04-24 20:32:04[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:32:06[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:32:13[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m43[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m1[39m, line: [33m23[39m, lineText: [32m'                    <p>时间： ${weather.} </p> '[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Expected identifier but found "}"'[39m }
+[38;5;8m2023-04-24 20:32:30[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m43[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m1[39m, line: [33m22[39m, lineText: [32m'                    <p>时间： ${weather.} </p> '[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Expected identifier but found "}"'[39m }
+[38;5;8m2023-04-24 20:32:32[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m44[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m1[39m, line: [33m18[39m, lineText: [32m'      let weather = await weatherQuery(city))'[39m, namespace: [32m''[39m, suggestion: [32m';'[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Expected ";" but found ")"'[39m }
+[38;5;8m2023-04-24 20:32:36[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m43[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m1[39m, line: [33m22[39m, lineText: [32m'                    <p>时间： ${weather.} </p> '[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Expected identifier but found "}"'[39m }
+[38;5;8m2023-04-24 20:32:49[0m [W] [38;5;215;1mcommand[0m weather 邢台
+                        ReferenceError: getTime is not defined
+                            at _Command.<anonymous> (e:\world\codeSpace\gptbot\external\weather\src\index.ts:20:18)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Array.<anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:285:14)
+                            at _Command.execute (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:301:22)
+                            at <anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:388:22)
+                            at Session2.withScope (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:266:14)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+                            at Processor._handleMessage (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:323:22)
+[38;5;8m2023-04-24 20:33:25[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m43[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m1[39m, line: [33m22[39m, lineText: [32m'                    <p>时间： ${weather.} </p> '[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Expected identifier but found "}"'[39m }
+[38;5;8m2023-04-24 20:33:27[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m43[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m1[39m, line: [33m22[39m, lineText: [32m'                    <p>时间： ${weather.} </p> '[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Expected identifier but found "}"'[39m }
+[38;5;8m2023-04-24 20:33:29[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m43[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m1[39m, line: [33m22[39m, lineText: [32m'                    <p>时间： ${weather.} </p> '[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Expected identifier but found "}"'[39m }
+[38;5;8m2023-04-24 20:33:33[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m43[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m1[39m, line: [33m22[39m, lineText: [32m'                    <p>时间： ${weather.} </p> '[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Expected identifier but found "}"'[39m }
+[38;5;8m2023-04-24 20:33:42[0m [W] [38;5;215;1mcommand[0m weather 邢台
+                        ReferenceError: getTime is not defined
+                            at _Command.<anonymous> (e:\world\codeSpace\gptbot\external\weather\src\index.ts:20:18)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Array.<anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:285:14)
+                            at _Command.execute (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:301:22)
+                            at <anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:388:22)
+                            at Session2.withScope (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:266:14)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+                            at Processor._handleMessage (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:323:22)
+[38;5;8m2023-04-24 20:33:59[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m43[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m1[39m, line: [33m22[39m, lineText: [32m'                    <p>时间： ${weather.} </p> '[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Expected identifier but found "}"'[39m }
+[38;5;8m2023-04-24 20:34:01[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m43[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m1[39m, line: [33m22[39m, lineText: [32m'                    <p>时间： ${weather.} </p> '[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Expected identifier but found "}"'[39m }
+[38;5;8m2023-04-24 20:34:05[0m [W] [38;5;215;1mcommand[0m weather 邢台
+                        ReferenceError: getTime is not defined
+                            at _Command.<anonymous> (e:\world\codeSpace\gptbot\external\weather\src\index.ts:20:18)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Array.<anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:285:14)
+                            at _Command.execute (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:301:22)
+                            at <anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:388:22)
+                            at Session2.withScope (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:266:14)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+                            at Processor._handleMessage (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:323:22)
+[38;5;8m2023-04-24 20:34:10[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m43[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m1[39m, line: [33m22[39m, lineText: [32m'                    <p>时间： ${weather.} </p> '[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Expected identifier but found "}"'[39m }
+[38;5;8m2023-04-24 20:34:26[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:34:28[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:34:32[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:34:45[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:35:17[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:35:22[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:35:24[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:35:34[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m6[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m3[39m, line: [33m17[39m, lineText: [32m'      let weather = (await weatherQuery(city)).forecasts[0]'[39m, namespace: [32m''[39m, suggestion: [32m'('[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Expected "(" but found "let"'[39m }
+[38;5;8m2023-04-24 20:35:40[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m6[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m3[39m, line: [33m17[39m, lineText: [32m'      let weather = (await weatherQuery(city)).forecasts[0]'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Cannot use a declaration in a single-statement context'[39m }
+[38;5;8m2023-04-24 20:35:41[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:35:43[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:35:56[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:36:35[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:36:38[0m [W] [38;5;215;1mcommand[0m weather 邢台
+                        TypeError: Cannot read properties of undefined (reading '0')
+                            at _Command.<anonymous> (e:\world\codeSpace\gptbot\external\weather\src\index.ts:21:27)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Array.<anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:285:14)
+                            at _Command.execute (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:301:22)
+                            at <anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:388:22)
+                            at Session2.withScope (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:266:14)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+                            at Processor._handleMessage (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:323:22)
+[38;5;8m2023-04-24 20:36:49[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:37:13[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:37:15[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:37:17[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:37:20[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:37:23[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:38:23[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:38:29[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:38:31[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m5[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m1[39m, line: [33m52[39m, lineText: [32m'  if()'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Unexpected ")"'[39m }
+[38;5;8m2023-04-24 20:38:33[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m1[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m0[39m, line: [33m66[39m, lineText: [32m'}'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Unexpected end of file'[39m }
+[38;5;8m2023-04-24 20:38:35[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:38:40[0m [W] [38;5;215;1mcommand[0m weather 邢台
+                        TypeError: Cannot read properties of undefined (reading '0')
+                            at _Command.<anonymous> (e:\world\codeSpace\gptbot\external\weather\src\index.ts:18:48)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Array.<anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:285:14)
+[38;5;8m2023-04-24 20:40:11[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m24[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m4[39m, line: [33m47[39m, lineText: [32m'    if(i.name.indexof() city) {'[39m, namespace: [32m''[39m, suggestion: [32m')'[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Expected ")" but found "city"'[39m }
+[38;5;8m2023-04-24 20:40:14[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:40:16[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:40:19[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:40:37[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:40:41[0m [W] [38;5;215;1mcommand[0m weather 邢台
+                        TypeError: i.name.indexof is not a function
+                            at weatherQuery (e:\world\codeSpace\gptbot\external\weather\src\index.ts:47:16)
+                            at _Command.<anonymous> (e:\world\codeSpace\gptbot\external\weather\src\index.ts:18:28)
+                            at Array.<anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:285:27)
+                            at Object.argv.next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:297:14)
+                            at _Command.execute (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:301:33)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at <anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:388:22)
+                            at Session2.withScope (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\session.ts:266:14)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+                            at next (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\middleware.ts:312:16)
+[38;5;8m2023-04-24 20:40:59[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:41:02[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:41:21[0m [W] [38;5;215;1mcommand[0m weather sbsbsbs
+                        TypeError: Cannot read properties of undefined (reading '0')
+                            at _Command.<anonymous> (e:\world\codeSpace\gptbot\external\weather\src\index.ts:18:48)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Array.<anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:285:14)
+[38;5;8m2023-04-24 20:41:32[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m8[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m0[39m, line: [33m47[39m, lineText: [32m'    if( i.name.search(city)! =-1 ) {'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Invalid assignment target'[39m }
+[38;5;8m2023-04-24 20:42:15[0m [W] [38;5;215;1mcommand[0m weather 提瓦特
+                        TypeError: Cannot read properties of undefined (reading '0')
+                            at _Command.<anonymous> (e:\world\codeSpace\gptbot\external\weather\src\index.ts:18:48)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Array.<anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:285:14)
+[38;5;8m2023-04-24 20:43:05[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m8[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m0[39m, line: [33m47[39m, lineText: [32m'    if( i.name.search(city)! =-1 ) {'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Invalid assignment target'[39m }
+[38;5;8m2023-04-24 20:43:11[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m8[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m0[39m, line: [33m48[39m, lineText: [32m'    if( i.name.search(city)! =-1 ) {'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Invalid assignment target'[39m }
+[38;5;8m2023-04-24 20:43:18[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m20[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m1[39m, line: [33m19[39m, lineText: [32m'      if(weather == )'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Unexpected ")"'[39m }
+[38;5;8m2023-04-24 20:43:19[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m6[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m3[39m, line: [33m21[39m, lineText: [32m'      let message = `<>   '[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Cannot use a declaration in a single-statement context'[39m }
+[38;5;8m2023-04-24 20:43:19[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m8[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m0[39m, line: [33m48[39m, lineText: [32m'    if( i.name.search(city)! =-1 ) {'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Invalid assignment target'[39m }
+[38;5;8m2023-04-24 20:43:20[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m6[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m3[39m, line: [33m21[39m, lineText: [32m'      let message = `<>   '[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Cannot use a declaration in a single-statement context'[39m }
+[38;5;8m2023-04-24 20:43:20[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m8[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m0[39m, line: [33m48[39m, lineText: [32m'    if( i.name.search(city)! =-1 ) {'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Invalid assignment target'[39m }
+[38;5;8m2023-04-24 20:43:21[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m8[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m0[39m, line: [33m50[39m, lineText: [32m'    if( i.name.search(city)! =-1 ) {'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Invalid assignment target'[39m }
+[38;5;8m2023-04-24 20:43:27[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m8[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m0[39m, line: [33m50[39m, lineText: [32m'    if( i.name.search(city)! =-1 ) {'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Invalid assignment target'[39m }
+[38;5;8m2023-04-24 20:43:29[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m8[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m0[39m, line: [33m50[39m, lineText: [32m'    if( i.name.search(city)! =-1 ) {'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Invalid assignment target'[39m }
+[38;5;8m2023-04-24 20:43:30[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m8[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m0[39m, line: [33m50[39m, lineText: [32m'    if( i.name.search(city)! =-1 ) {'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Invalid assignment target'[39m }
+[38;5;8m2023-04-24 20:43:58[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m8[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m0[39m, line: [33m50[39m, lineText: [32m'    if( i.name.search(city)! =-1 ) {'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Invalid assignment target'[39m }
+[38;5;8m2023-04-24 20:43:59[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m8[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m0[39m, line: [33m50[39m, lineText: [32m'    if( i.name.search(city)! =-1 ) {'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Invalid assignment target'[39m }
+[38;5;8m2023-04-24 20:44:01[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m8[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m0[39m, line: [33m50[39m, lineText: [32m'    if( i.name.search(city)! =-1 ) {'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Invalid assignment target'[39m }
+[38;5;8m2023-04-24 20:44:15[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m8[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m0[39m, line: [33m50[39m, lineText: [32m'    if( i.name.search(city)! = -1 ) {'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Invalid assignment target'[39m }
+[38;5;8m2023-04-24 20:44:17[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:44:19[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:44:23[0m [W] [38;5;215;1mcommand[0m weather 提瓦特
+                        TypeError: Cannot read properties of undefined (reading '0')
+                            at _Command.<anonymous> (e:\world\codeSpace\gptbot\external\weather\src\index.ts:18:48)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Array.<anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:285:14)
+[38;5;8m2023-04-24 20:44:32[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:44:34[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:44:37[0m [W] [38;5;215;1mcommand[0m weather 提瓦特
+                        TypeError: Cannot read properties of undefined (reading '0')
+                            at _Command.<anonymous> (e:\world\codeSpace\gptbot\external\weather\src\index.ts:18:48)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Array.<anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:285:14)
+[38;5;8m2023-04-24 20:44:48[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:44:50[0m [W] [38;5;215;1mcommand[0m weather 提瓦特
+                        TypeError: Cannot read properties of undefined (reading '0')
+                            at _Command.<anonymous> (e:\world\codeSpace\gptbot\external\weather\src\index.ts:18:48)
+                            at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                            at Array.<anonymous> (E:\world\codeSpace\gptbot\node_modules\@koishijs\core\src\command\command.ts:285:14)
+[38;5;8m2023-04-24 20:45:07[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m6[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m2[39m, line: [33m19[39m, lineText: [32m'      if(weather == "城市名错误"){'[39m, namespace: [32m''[39m, suggestion: [32m')'[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Expected ")" but found "if"'[39m }
+[38;5;8m2023-04-24 20:45:09[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:45:12[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:45:14[0m [W] [38;5;167;1mwatch[0m { detail: [90mundefined[39m, id: [32m''[39m, location: { column: [33m8[39m, file: [32m'E:\\world\\codeSpace\\gptbot\\external\\weather\\src\\index.ts'[39m, length: [33m1[39m, line: [33m22[39m, lineText: [32m'        .forecasts[0]'[39m, namespace: [32m''[39m, suggestion: [32m''[39m }, notes: [], pluginName: [32m''[39m, text: [32m'Unexpected "."'[39m }
+[38;5;8m2023-04-24 20:45:19[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:45:31[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:45:33[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:45:42[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
+[38;5;8m2023-04-24 20:45:52[0m [I] [38;5;167;1mwatch[0m reload plugin at [38;5;167mexternal\weather\src\index.ts[0m
