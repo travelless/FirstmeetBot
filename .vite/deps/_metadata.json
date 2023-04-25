@@ -1,53 +1,53 @@
 {
-  "hash": "d6b6391e",
-  "browserHash": "64929758",
+  "hash": "2c5e4102",
+  "browserHash": "013b232d",
   "optimized": {
     "vue": {
       "src": "../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "27add20a",
+      "fileHash": "512351ab",
       "needsInterop": false
     },
     "vue-router": {
       "src": "../../node_modules/vue-router/dist/vue-router.mjs",
       "file": "vue-router.js",
-      "fileHash": "7fce0a1b",
+      "fileHash": "be34b01c",
       "needsInterop": false
     },
     "element-plus": {
       "src": "../../node_modules/element-plus/es/index.mjs",
       "file": "element-plus.js",
-      "fileHash": "41d2518e",
+      "fileHash": "3db78e17",
       "needsInterop": false
     },
     "@vueuse/core": {
       "src": "../../node_modules/@vueuse/core/index.mjs",
       "file": "@vueuse_core.js",
-      "fileHash": "4af539ec",
+      "fileHash": "1fea8b95",
       "needsInterop": false
     },
     "@popperjs/core": {
       "src": "../../node_modules/@popperjs/core/dist/index.mjs",
       "file": "@popperjs_core.js",
-      "fileHash": "d42355f5",
+      "fileHash": "b0d3dd22",
       "needsInterop": false
     },
     "marked": {
       "src": "../../node_modules/marked/lib/marked.esm.js",
       "file": "marked.js",
-      "fileHash": "08b12d81",
+      "fileHash": "3604a5a1",
       "needsInterop": false
     },
     "xss": {
       "src": "../../node_modules/xss/lib/index.js",
       "file": "xss.js",
-      "fileHash": "b135f05d",
+      "fileHash": "5269c585",
       "needsInterop": true
     },
     "@koishijs/client": {
       "src": "../../node_modules/@koishijs/client/client/index.ts",
       "file": "@koishijs_client.js",
-      "fileHash": "ef2419ed",
+      "fileHash": "91bb0edd",
       "needsInterop": false
     }
   },

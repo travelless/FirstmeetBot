@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model user_info {
+  id        Int     @id @default(autoincrement())
+  user_id   BigInt  @unique(map: "user_info_idx1")
+  user_name String  @db.VarChar
+  nickname  String? @db.VarChar
+  befriend_time DateTime @db.Timestamp(6)
+}
+
+model group_info {
+  id               Int    @id @default(autoincrement())
+  group_id         BigInt @unique(map: "group_info_idx1")
+  group_name       String @db.VarChar
+  member_count     Int
+  group_flag       Int
+  create_time      DateTime @db.Timestamp(6)
+}
+
+model chat_history {
+  id          Int      @id @default(autoincrement())
+  user_qq     BigInt
+  group_id    BigInt?
+  text        String?
+  plain_text  String?
+  create_time DateTime @db.Timestamptz(6)
+}
