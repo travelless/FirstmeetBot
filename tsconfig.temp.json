@@ -5,7 +5,13 @@
       "path": "./external/weather"
     },
     {
+      "path": "./external/test"
+    },
+    {
       "path": "./external/special"
+    },
+    {
+      "path": "./external/pg-database"
     },
     {
       "path": "./external/chatgpt"

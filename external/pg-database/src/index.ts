@@ -42,8 +42,9 @@ export class PostgresDatabase extends Service {
       })
     }
     console.log(userList);
+    let result;
     try{
-      let result = await this.postgres.user_info.createMany({ data: userList } , skipDuplicates: true)
+      result = await this.postgres.user_info.createMany({ data: userList })
     }
     catch(e) {
       console.log(e);
@@ -56,14 +57,6 @@ export class PostgresDatabase extends Service {
   // 向user_info表中新增一条数据
   async addUser(user_id: number, user_name: string) {
     let befriend_time = new Date()
-    try{
-      user_id = parseInt(user_id)
-      user_name = user_name.toString()
-    }
-    catch(e) {
-      console.log(e);
-      return e;
-    }
     let result = await this.postgres.user_info.create({
       data: {
         user_id: user_id,
