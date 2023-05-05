@@ -22,18 +22,20 @@ export function apply(ctx: Context) {
       }else{
         weather = weather.forecasts[0]
       }
-      // console.log(weather);
+      console.log(weather);
       let message = `<>   
                     <p>时间： ${weather.reporttime} </p> 
                     <p>地区： ${weather.city}</p> 
                     <p>今日天气： </p>
                     <p>          白天-${weather.casts[0].dayweather}  晚上-${weather.casts[0].nightweather}</p>
                     <p>          温度 ${weather.casts[0].nighttemp}-${weather.casts[0].daytemp} ℃</p>
-                    <p>          风力 ${weather.casts[0].daywind} 级</p>
+                    <p>          风向 ${weather.casts[0].daywind}  </p>
+                    <p>          风力 ${weather.casts[0].daypower} 级</p>
                     <p>明日天气：</p>
                     <p>          白天-${weather.casts[1].dayweather}  晚上-${weather.casts[1].nightweather}</p>
                     <p>          温度 ${weather.casts[1].nighttemp}-${weather.casts[1].daytemp} ℃</p>
-                    <p>          风力 ${weather.casts[1].daywind} 级</p> 
+                    <p>          风向 ${weather.casts[1].daywind}  </p>
+                    <p>          风力 ${weather.casts[1].daypower} 级</p> 
                     </>`
       return message
     })

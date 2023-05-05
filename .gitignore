@@ -1,6 +1,8 @@
 lib
 dist
 accounts
+logs/*
+
 
 yarn.lock
 package-lock.json

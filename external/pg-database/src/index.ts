@@ -44,7 +44,7 @@ export class PostgresDatabase extends Service {
     console.log(userList);
     let result;
     try{
-      result = await this.postgres.user_info.createMany({ data: userList })
+      result = await this.postgres.user_info.createMany({ data: userList,skipDuplicates:true, })
     }
     catch(e) {
       console.log(e);

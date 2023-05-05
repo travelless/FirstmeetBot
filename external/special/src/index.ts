@@ -15,7 +15,7 @@ export function apply(ctx: Context) {
     let special_id = process.env.SPECIAL_ID
     let weather = (await weatherQuery("杭州")).forecasts[0]
     let time = getTime(weather.casts[0].week)
-    let SayLove = ['那个傻猪向你道歉，并向你承诺了一束你喜欢的花','如果他以后再惹你生气可以对我说，我帮你骂死他！']
+    let SayLove = ['早安，慧子','希望晨间的阳光能够让你的笑容更加绚丽。']
     let message = `<>   
                   <p>      亲爱的陈慧同学 早安  </p>
                   <p>时间： ${time} </p> 
@@ -23,10 +23,12 @@ export function apply(ctx: Context) {
                   <p>今日天气： </p>
                   <p>          白天-${weather.casts[0].dayweather}  晚上-${weather.casts[0].nightweather}</p>
                   <p>          温度 ${weather.casts[0].nighttemp}-${weather.casts[0].daytemp} ℃</p>
+                  <p>          风向 ${weather.casts[0].daywind}  </p>
                   <p>          风力 ${weather.casts[0].daywind} 级</p>
                   <p>明日天气：</p>
                   <p>          白天-${weather.casts[1].dayweather}  晚上-${weather.casts[1].nightweather}</p>
                   <p>          温度 ${weather.casts[1].nighttemp}-${weather.casts[1].daytemp} ℃</p>
+                  <p>          风向 ${weather.casts[1].daywind}  </p>
                   <p>          风力 ${weather.casts[1].daywind} 级</p> 
                   <p>      ${ SayLove[0] }   </p> 
                   <p>      ${ SayLove[1] }   </p> 
