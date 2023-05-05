@@ -1,6 +1,6 @@
 {
-  "name": "koishi-plugin-test",
-  "description": "tset",
+  "name": "koishi-plugin-hdu-crouse",
+  "description": "query and send crouse to someone",
   "version": "0.0.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

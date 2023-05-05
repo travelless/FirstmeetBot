@@ -15,7 +15,6 @@ export interface Config {}
 export const Config: Schema<Config> = Schema.object({})
 
 export function apply(ctx: Context) {
-  // write your plugin here
   ctx.pgdata = new PostgresDatabase(new PrismaClient(), ctx);
   // console.log(ctx.pgdata);
 }
@@ -24,7 +23,7 @@ export function apply(ctx: Context) {
 export class PostgresDatabase extends Service {
   postgres:PrismaClient
   constructor(private client: PrismaClient, ctx: Context) {
-      super(ctx, 'pgdata')
+      super(ctx, 'pgdb')
       this.postgres = client
   }
   // 更新整体数据库数据
@@ -54,6 +53,8 @@ export class PostgresDatabase extends Service {
     console.log("success!");
     return result
   }
+
+  // user_info表操作
   // 向user_info表中新增一条数据
   async addUser(user_id: number, user_name: string) {
     let befriend_time = new Date()
@@ -66,6 +67,41 @@ export class PostgresDatabase extends Service {
     })
     return result
   }
+  // 向user_school_info表中新增一条数据 user_id: QQ号  school:学校代号 stu_num:学号  stu_pin:密码
+  async addStu(user_id: number, school: String, stu_num: number, stu_pin: String){
+    let result = await this.postgres.user_school_info.create({
+      data: {
+        user_id: user_id,
+        school: school,
+        stu_num: stu_num,
+        stu_pin: stu_pin,
+      }
+    })
+    return result
+  }
+  // 更新user_school_info表中数据
+  async updateStu(user_id: number, school?: String, stu_num?: number, stu_pin?: String,token?:String){
+    let result = await this.postgres.user_school_info.update({
+      where: {
+        user_id: user_id
+      },
+      data: {
+        school: school,
+        stu_num: stu_num,
+        stu_pin: stu_pin,
+        token: token,
+      },
+    })
+    return result
+  }
 
-
+  // 查询user_school_info表中数据
+  async getStu(user_id: number){
+    let result = await this.postgres.user_school_info.findUnique({
+      where: {
+        user_id: user_id
+      }
+    })
+    return result
+  }
 }
