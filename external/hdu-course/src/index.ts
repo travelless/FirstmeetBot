@@ -24,7 +24,8 @@ export async function apply(ctx: Context) {
     .action(async ({ session }, schoolName, stuNum, stuPin) => {
       console.log(schoolName, stuNum, stuPin);
       let user_id = parseInt(session.userId)
-      let res = await ctx.pgdb.addStu(user_id, schoolName, stuNum, stuPin)
+      let token = await getHDUToken(un,pd)
+      let res = await ctx.pgdb.addStu(user_id, schoolName, stuNum, stuPin, token)
       console.log(res);
       return '设置成功'
     })

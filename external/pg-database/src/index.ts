@@ -69,13 +69,14 @@ export class PostgresDatabase extends Service {
     return result
   }
   // 向user_school_info表中新增一条数据 user_id: QQ号  school:学校代号 stu_num:学号  stu_pin:密码
-  async addStu(user_id: number, school: string, stu_num: number, stu_pin: string){
+  async addStu(user_id: number, school: string, stu_num: number, stu_pin: string, token?:string){
     let result = await this.postgres.user_school_info.create({
       data: {
         user_id: user_id,
         school: school,
         stu_num: stu_num,
         stu_pin: stu_pin,
+        token: token,
       }
     })
     return result
