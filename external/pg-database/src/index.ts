@@ -1,4 +1,4 @@
-import { Context, Schema, Service, User } from 'koishi'
+import { App, Context, Schema, Service, User } from 'koishi'
 import { PrismaClient } from '@prisma/client';
 import {} from '@koishijs/plugin-adapter-onebot'
 
@@ -6,16 +6,17 @@ export const name = 'pg-database'
 // let prisma = new PrismaClient()
 declare module 'koishi' {
   interface Context {
-    pgdata: PostgresDatabase
+    pgdb: PostgresDatabase
   }
 }
+
 
 export interface Config {}
 
 export const Config: Schema<Config> = Schema.object({})
 
 export function apply(ctx: Context) {
-  ctx.pgdata = new PostgresDatabase(new PrismaClient(), ctx);
+  ctx.pgdb = new PostgresDatabase(new PrismaClient(), ctx);
   // console.log(ctx.pgdata);
 }
 
@@ -23,7 +24,7 @@ export function apply(ctx: Context) {
 export class PostgresDatabase extends Service {
   postgres:PrismaClient
   constructor(private client: PrismaClient, ctx: Context) {
-      super(ctx, 'pgdb')
+      super(ctx, 'pgdb', true)
       this.postgres = client
   }
   // 更新整体数据库数据
@@ -68,7 +69,7 @@ export class PostgresDatabase extends Service {
     return result
   }
   // 向user_school_info表中新增一条数据 user_id: QQ号  school:学校代号 stu_num:学号  stu_pin:密码
-  async addStu(user_id: number, school: String, stu_num: number, stu_pin: String){
+  async addStu(user_id: number, school: string, stu_num: number, stu_pin: string){
     let result = await this.postgres.user_school_info.create({
       data: {
         user_id: user_id,
@@ -80,7 +81,7 @@ export class PostgresDatabase extends Service {
     return result
   }
   // 更新user_school_info表中数据
-  async updateStu(user_id: number, school?: String, stu_num?: number, stu_pin?: String,token?:String){
+  async updateStu(user_id: number, school?: string, stu_num?: number, stu_pin?: string,token?:string){
     let result = await this.postgres.user_school_info.update({
       where: {
         user_id: user_id

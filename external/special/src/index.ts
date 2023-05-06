@@ -2,21 +2,26 @@ import { Context, Schema, Service } from 'koishi'
 import cron from 'koishi-plugin-cron'
 import {} from '@koishijs/plugin-adapter-onebot'
 import { weatherQuery } from 'koishi-plugin-weather'
+import { course ,getHDUToken } from 'koishi-plugin-hdu-course'
+import {} from 'koishi-plugin-pg-database'
+
 export const name = 'special'
 
 export interface Config {}
 
 export const Config: Schema<Config> = Schema.object({})
 
-export function apply(ctx: Context) {
-  let test = '*/2 * * * * *'
+export async function apply(ctx: Context) {
+  let test = '*/10 * * * * *'
   let morning = '0 30 7 * * *'
+
   ctx.cron(morning, async () => {
     let special_id = process.env.SPECIAL_ID
-    let weather = (await weatherQuery("杭州")).forecasts[0]
+    let weather = (await weatherQuery("杭州",'all')).forecasts[0]
     let time = getTime(weather.casts[0].week)
+    
     let SayLove = ['早安，慧子','希望晨间的阳光能够让你的笑容更加绚丽。']
-    let message = `<>   
+    let dayMessage = `<>   
                   <p>      亲爱的陈慧同学 早安  </p>
                   <p>时间： ${time} </p> 
                   <p>地区： ${weather.city}</p> 
@@ -33,11 +38,15 @@ export function apply(ctx: Context) {
                   <p>      ${ SayLove[0] }   </p> 
                   <p>      ${ SayLove[1] }   </p> 
                   </>`
-    ctx.bots[0].sendPrivateMessage(special_id, message)
+
+    let specialData = await ctx.pgdb.getStu(parseInt(special_id))
+    let courseMessage = await course(specialData)
+    ctx.bots[0].sendPrivateMessage(special_id, dayMessage)
+    ctx.bots[0].sendPrivateMessage(special_id, courseMessage)
+    // await ctx.bots[0].sendPrivateMessage('2022742378', dayMessage)
+    // await ctx.bots[0].sendPrivateMessage('2022742378', courseMessage)
   })
-
 }
-
 
 function getTime(week){
   let weekday

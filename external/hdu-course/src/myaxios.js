@@ -8,6 +8,11 @@ export class Axios {
         this.cookieJar = requests.jar()
     }
     async get(params) {
+        let paramsArray = []
+        if(params.data != undefined) {
+            Object.keys(params.data).forEach(key => paramsArray.push(key +'='+ params.data[key]))
+            params.uri += '?' + paramsArray.join('&')
+        }
         return new Promise((resolve, reject) => {
             this.request.get({ ...params, jar: this.cookieJar, followRedirect: false }, (err, res, body) => {
                 if (err) {

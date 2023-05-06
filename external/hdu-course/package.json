@@ -1,5 +1,5 @@
 {
-  "name": "koishi-plugin-hdu-crouse",
+  "name": "koishi-plugin-hdu-course",
   "description": "query and send crouse to someone",
   "version": "0.0.1",
   "main": "lib/index.js",
@@ -19,6 +19,7 @@
     "koishi": "^4.12.5"
   },
   "dependencies": {
+    "fetch": "^1.1.0",
     "request": "^2.88.2"
   }
 }

@@ -9379,7 +9379,6 @@ export {
   isString,
   isObject,
   isPromise,
-  toTypeString,
   toRawType,
   camelize,
   hyphenate,
@@ -9526,4 +9525,4 @@ export {
   initDirectivesForSSR,
   compile2 as compile
 };
-//# sourceMappingURL=chunk-P2FA5UP5.js.map
+//# sourceMappingURL=chunk-A4I7EZQC.js.map

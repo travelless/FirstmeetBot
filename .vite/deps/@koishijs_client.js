@@ -2,30 +2,27 @@ import {
   START_LOCATION_NORMALIZED,
   createRouter,
   createWebHistory
-} from "./chunk-C67OIUB6.js";
+} from "./chunk-AYVRSGAK.js";
 import {
   ElLoading,
   ElMessage,
   ElMessageBox,
   installer
-} from "./chunk-YDAED2N2.js";
+} from "./chunk-HUEORTNN.js";
 import {
   resolveUnref,
   useLocalStorage
-} from "./chunk-DUT36VXS.js";
+} from "./chunk-7PYXQCTP.js";
 import {
-  Comment,
-  Fragment,
-  Text,
   defineComponent,
+  getCurrentInstance,
   h,
   markRaw,
   reactive,
   ref,
   resolveComponent,
-  watch,
-  withDirectives
-} from "./chunk-P2FA5UP5.js";
+  watch
+} from "./chunk-A4I7EZQC.js";
 import "./chunk-FXSMT4ZS.js";
 import {
   marked
@@ -147,7 +144,7 @@ function connect(callback) {
 }
 
 // node_modules/marked-vue/lib/index.mjs
-var import_xss = __toESM(require_lib(), 1);
+var xss = __toESM(require_lib(), 1);
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 var allowedTags = [
@@ -242,18 +239,18 @@ function sanitize(html) {
     ...Object.fromEntries(allowedTags.map((tag) => [tag, []]))
   };
   const stack = [];
-  html = (0, import_xss.filterXSS)(html, {
+  html = xss.filterXSS(html, {
     whiteList,
     stripIgnoreTag: true,
     onTag(tag, raw, options) {
       let html2;
       if (tag === "a" && !options.isClosing) {
         const attrs = {};
-        (0, import_xss.parseAttr)(raw.slice(3), (name, value) => {
+        xss.parseAttr(raw.slice(3), (name, value) => {
           if (name === "href") {
             attrs[name] = checkUrl(value) ? value : "#";
           } else if (name === "title") {
-            attrs[name] = (0, import_xss.escapeAttrValue)(value);
+            attrs[name] = xss.escapeAttrValue(value);
           }
           return "";
         });
@@ -293,10 +290,10 @@ var src_default = defineComponent({
     unsafe: Boolean
   },
   setup(props) {
-    let html = props.inline ? marked.parseInline(props.source || "") : marked.parse(props.source || "");
-    if (!props.unsafe)
-      html = sanitize(html);
     return () => {
+      let html = props.inline ? marked.parseInline(props.source || "") : marked.parse(props.source || "");
+      if (!props.unsafe)
+        html = sanitize(html);
       const tag = props.tag || (props.inline ? "span" : "div");
       return h(tag, {
         class: "markdown",
@@ -306,21 +303,18 @@ var src_default = defineComponent({
   }
 });
 
-// node_modules/@koishijs/client/client/components/common/index.ts
-import Button from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/common/k-button.vue";
-import Filter from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/common/k-filter.vue";
-import FilterButton from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/common/k-filter-button.vue";
-import Form from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/common/k-form.vue";
-import Tab from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/common/k-tab.vue";
-function common_default(app) {
-  app.component("k-button", Button);
-  app.component("k-filter", Filter);
-  app.component("k-filter-button", FilterButton);
-  app.component("k-form", Form);
-  app.component("k-tab", Tab);
-}
-
 // node_modules/schemastery-vue/src/index.ts
+import SchemaBase from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/base.vue";
+import SchemaPrimitive from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/primitive.vue";
+import Bitset from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/extensions/bitset.vue";
+import Group from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/extensions/group.vue";
+import Intersect from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/extensions/intersect.vue";
+import Object2 from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/extensions/object.vue";
+import Radio from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/extensions/radio.vue";
+import Table from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/extensions/table.vue";
+import Textarea from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/extensions/textarea.vue";
+import Tuple from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/extensions/tuple.vue";
+import Union from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/extensions/union.vue";
 import Schema from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/schema.vue";
 
 // node_modules/schemastery-vue/src/icons/index.ts
@@ -330,7 +324,7 @@ import IconExternal from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue
 import IconEyeSlash from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/icons/eye-slash.vue";
 import IconEye from "E:/world/codeSpace/gptbot/node_modules/schemastery-vue/src/icons/eye.vue";
 
-// node_modules/cosmokit/lib/index.mjs
+// node_modules/schemastery/node_modules/cosmokit/lib/index.mjs
 var __defProp2 = Object.defineProperty;
 var __name2 = (target, value) => __defProp2(target, "name", { value, configurable: true });
 function noop() {
@@ -382,7 +376,7 @@ function deepEqual(a, b, strict) {
   } else if (Array.isArray(b)) {
     return false;
   }
-  return Object.keys({ ...a, ...b }).every((key) => deepEqual(a[key], b[key]));
+  return Object.keys({ ...a, ...b }).every((key) => deepEqual(a[key], b[key], strict));
 }
 __name2(deepEqual, "deepEqual");
 function pick(source, keys, forced) {
@@ -488,8 +482,6 @@ function snakeCase(source) {
   return uncapitalize(source).replace(/-/g, "_").replace(/.[A-Z]+/g, (str) => str[0] + "_" + str.slice(1).toLowerCase());
 }
 __name2(snakeCase, "snakeCase");
-var camelize = camelCase;
-var hyphenate = paramCase;
 function trimSlash(source) {
   return source.replace(/\/$/, "");
 }
@@ -501,40 +493,40 @@ function sanitize2(source) {
 }
 __name2(sanitize2, "sanitize");
 var Time;
-((Time2) => {
-  Time2.millisecond = 1;
-  Time2.second = 1e3;
-  Time2.minute = Time2.second * 60;
-  Time2.hour = Time2.minute * 60;
-  Time2.day = Time2.hour * 24;
-  Time2.week = Time2.day * 7;
+((Time22) => {
+  Time22.millisecond = 1;
+  Time22.second = 1e3;
+  Time22.minute = Time22.second * 60;
+  Time22.hour = Time22.minute * 60;
+  Time22.day = Time22.hour * 24;
+  Time22.week = Time22.day * 7;
   let timezoneOffset = (/* @__PURE__ */ new Date()).getTimezoneOffset();
   function setTimezoneOffset(offset) {
     timezoneOffset = offset;
   }
-  Time2.setTimezoneOffset = setTimezoneOffset;
+  Time22.setTimezoneOffset = setTimezoneOffset;
   __name2(setTimezoneOffset, "setTimezoneOffset");
   function getTimezoneOffset() {
     return timezoneOffset;
   }
-  Time2.getTimezoneOffset = getTimezoneOffset;
+  Time22.getTimezoneOffset = getTimezoneOffset;
   __name2(getTimezoneOffset, "getTimezoneOffset");
   function getDateNumber(date = /* @__PURE__ */ new Date(), offset) {
     if (typeof date === "number")
       date = new Date(date);
     if (offset === void 0)
       offset = timezoneOffset;
-    return Math.floor((date.valueOf() / Time2.minute - offset) / 1440);
+    return Math.floor((date.valueOf() / Time22.minute - offset) / 1440);
   }
-  Time2.getDateNumber = getDateNumber;
+  Time22.getDateNumber = getDateNumber;
   __name2(getDateNumber, "getDateNumber");
   function fromDateNumber(value, offset) {
-    const date = new Date(value * Time2.day);
+    const date = new Date(value * Time22.day);
     if (offset === void 0)
       offset = timezoneOffset;
-    return new Date(+date + offset * Time2.minute);
+    return new Date(+date + offset * Time22.minute);
   }
-  Time2.fromDateNumber = fromDateNumber;
+  Time22.fromDateNumber = fromDateNumber;
   __name2(fromDateNumber, "fromDateNumber");
   const numeric = /\d+(?:\.\d+)?/.source;
   const timeRegExp = new RegExp(`^${[
@@ -548,9 +540,9 @@ var Time;
     const capture = timeRegExp.exec(source);
     if (!capture)
       return 0;
-    return (parseFloat(capture[1]) * Time2.week || 0) + (parseFloat(capture[2]) * Time2.day || 0) + (parseFloat(capture[3]) * Time2.hour || 0) + (parseFloat(capture[4]) * Time2.minute || 0) + (parseFloat(capture[5]) * Time2.second || 0);
+    return (parseFloat(capture[1]) * Time22.week || 0) + (parseFloat(capture[2]) * Time22.day || 0) + (parseFloat(capture[3]) * Time22.hour || 0) + (parseFloat(capture[4]) * Time22.minute || 0) + (parseFloat(capture[5]) * Time22.second || 0);
   }
-  Time2.parseTime = parseTime;
+  Time22.parseTime = parseTime;
   __name2(parseTime, "parseTime");
   function parseDate(date) {
     const parsed = parseTime(date);
@@ -563,32 +555,32 @@ var Time;
     }
     return date ? new Date(date) : /* @__PURE__ */ new Date();
   }
-  Time2.parseDate = parseDate;
+  Time22.parseDate = parseDate;
   __name2(parseDate, "parseDate");
   function format(ms) {
     const abs = Math.abs(ms);
-    if (abs >= Time2.day - Time2.hour / 2) {
-      return Math.round(ms / Time2.day) + "d";
-    } else if (abs >= Time2.hour - Time2.minute / 2) {
-      return Math.round(ms / Time2.hour) + "h";
-    } else if (abs >= Time2.minute - Time2.second / 2) {
-      return Math.round(ms / Time2.minute) + "m";
-    } else if (abs >= Time2.second) {
-      return Math.round(ms / Time2.second) + "s";
+    if (abs >= Time22.day - Time22.hour / 2) {
+      return Math.round(ms / Time22.day) + "d";
+    } else if (abs >= Time22.hour - Time22.minute / 2) {
+      return Math.round(ms / Time22.hour) + "h";
+    } else if (abs >= Time22.minute - Time22.second / 2) {
+      return Math.round(ms / Time22.minute) + "m";
+    } else if (abs >= Time22.second) {
+      return Math.round(ms / Time22.second) + "s";
     }
     return ms + "ms";
   }
-  Time2.format = format;
+  Time22.format = format;
   __name2(format, "format");
   function toDigits(source, length = 2) {
     return source.toString().padStart(length, "0");
   }
-  Time2.toDigits = toDigits;
+  Time22.toDigits = toDigits;
   __name2(toDigits, "toDigits");
   function template(template2, time = /* @__PURE__ */ new Date()) {
     return template2.replace("yyyy", time.getFullYear().toString()).replace("yy", time.getFullYear().toString().slice(2)).replace("MM", toDigits(time.getMonth() + 1)).replace("dd", toDigits(time.getDate())).replace("hh", toDigits(time.getHours())).replace("mm", toDigits(time.getMinutes())).replace("ss", toDigits(time.getSeconds())).replace("SSS", toDigits(time.getMilliseconds(), 3));
   }
-  Time2.template = template;
+  Time22.template = template;
   __name2(template, "template");
 })(Time || (Time = {}));
 
@@ -817,16 +809,24 @@ var require_src = __commonJS({
       checkWithinRange(data.length, meta, "string length");
       return [data];
     });
+    function isMultipleOf(data, min, step) {
+      step = Math.abs(step);
+      if (!/^\d+\.\d+$/.test(step.toString())) {
+        return (data - min) % step === 0;
+      }
+      const index = step.toString().indexOf(".");
+      const digits = step.toString().slice(index + 1).length;
+      const multiple = Math.pow(10, digits);
+      return Math.abs(data * multiple - min * multiple) % (step * multiple) === 0;
+    }
+    __name3(isMultipleOf, "isMultipleOf");
     Schema2.extend("number", (data, { meta }) => {
       if (typeof data !== "number")
         throw new TypeError(`expected number but got ${data}`);
       checkWithinRange(data, meta, "number");
       const { step } = meta;
-      if (step) {
-        const quotient = Math.abs(data - (meta.min ?? 0)) % step;
-        if (quotient >= Number.EPSILON && quotient < step - Number.EPSILON) {
-          throw new TypeError(`expected number multiple of ${step} but got ${data}`);
-        }
+      if (step && !isMultipleOf(data, meta.min ?? 0, step)) {
+        throw new TypeError(`expected number multiple of ${step} but got ${data}`);
       }
       return [data];
     });
@@ -924,12 +924,13 @@ var require_src = __commonJS({
         merge(result, data);
       return [result];
     });
-    Schema2.extend("union", (data, { list, toString }) => {
+    Schema2.extend("union", (data, { list, toString }, strict) => {
       const messages = [];
       for (const inner of list) {
         try {
-          return Schema2.resolve(data, inner);
+          return Schema2.resolve(data, inner, strict);
         } catch (error) {
+          messages.push(error);
         }
       }
       throw new TypeError(`expected ${toString()} but got ${JSON.stringify(data)}`);
@@ -1049,6 +1050,268 @@ var require_src = __commonJS({
 });
 var lib_default = require_src();
 
+// node_modules/cosmokit/lib/index.mjs
+var __defProp4 = Object.defineProperty;
+var __name4 = (target, value) => __defProp4(target, "name", { value, configurable: true });
+function noop2() {
+}
+__name4(noop2, "noop");
+function isNullable2(value) {
+  return value === null || value === void 0;
+}
+__name4(isNullable2, "isNullable");
+function isPlainObject2(data) {
+  return data && typeof data === "object" && !Array.isArray(data);
+}
+__name4(isPlainObject2, "isPlainObject");
+function valueMap2(object, transform) {
+  return Object.fromEntries(Object.entries(object).map(([key, value]) => [key, transform(value, key)]));
+}
+__name4(valueMap2, "valueMap");
+function is2(type, value) {
+  return type in globalThis && value instanceof globalThis[type] || Object.prototype.toString.call(value).slice(8, -1) === type;
+}
+__name4(is2, "is");
+function clone2(source) {
+  if (!source || typeof source !== "object")
+    return source;
+  if (Array.isArray(source))
+    return source.map(clone2);
+  if (is2("Date", source))
+    return new Date(source.valueOf());
+  if (is2("RegExp", source))
+    return new RegExp(source.source, source.flags);
+  return valueMap2(source, clone2);
+}
+__name4(clone2, "clone");
+function deepEqual2(a, b, strict) {
+  if (a === b)
+    return true;
+  if (!strict && isNullable2(a) && isNullable2(b))
+    return true;
+  if (typeof a !== typeof b)
+    return false;
+  if (typeof a !== "object")
+    return false;
+  if (!a || !b)
+    return false;
+  if (Array.isArray(a)) {
+    if (!Array.isArray(b) || a.length !== b.length)
+      return false;
+    return a.every((item, index) => deepEqual2(item, b[index]));
+  } else if (Array.isArray(b)) {
+    return false;
+  }
+  return Object.keys({ ...a, ...b }).every((key) => deepEqual2(a[key], b[key]));
+}
+__name4(deepEqual2, "deepEqual");
+function pick2(source, keys, forced) {
+  if (!keys)
+    return { ...source };
+  const result = {};
+  for (const key of keys) {
+    if (forced || key in source)
+      result[key] = source[key];
+  }
+  return result;
+}
+__name4(pick2, "pick");
+function omit2(source, keys) {
+  if (!keys)
+    return { ...source };
+  const result = { ...source };
+  for (const key of keys) {
+    Reflect.deleteProperty(result, key);
+  }
+  return result;
+}
+__name4(omit2, "omit");
+function defineProperty2(object, key, value) {
+  return Object.defineProperty(object, key, { writable: true, value });
+}
+__name4(defineProperty2, "defineProperty");
+function contain2(array1, array2) {
+  return array2.every((item) => array1.includes(item));
+}
+__name4(contain2, "contain");
+function intersection2(array1, array2) {
+  return array1.filter((item) => array2.includes(item));
+}
+__name4(intersection2, "intersection");
+function difference2(array1, array2) {
+  return array1.filter((item) => !array2.includes(item));
+}
+__name4(difference2, "difference");
+function union2(array1, array2) {
+  return Array.from(/* @__PURE__ */ new Set([...array1, ...array2]));
+}
+__name4(union2, "union");
+function deduplicate2(array) {
+  return [...new Set(array)];
+}
+__name4(deduplicate2, "deduplicate");
+function remove2(list, item) {
+  const index = list.indexOf(item);
+  if (index >= 0) {
+    list.splice(index, 1);
+    return true;
+  } else {
+    return false;
+  }
+}
+__name4(remove2, "remove");
+function makeArray2(source) {
+  return Array.isArray(source) ? source : isNullable2(source) ? [] : [source];
+}
+__name4(makeArray2, "makeArray");
+function arrayBufferToBase642(buffer) {
+  if (typeof Buffer !== "undefined") {
+    return Buffer.from(buffer).toString("base64");
+  }
+  let binary = "";
+  const bytes = new Uint8Array(buffer);
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return btoa(binary);
+}
+__name4(arrayBufferToBase642, "arrayBufferToBase64");
+function base64ToArrayBuffer2(base64) {
+  if (typeof Buffer !== "undefined") {
+    return Buffer.from(base64, "base64").buffer;
+  }
+  const binary = atob(base64.replace(/\s/g, ""));
+  const buffer = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    buffer[i] = binary.charCodeAt(i);
+  }
+  return buffer;
+}
+__name4(base64ToArrayBuffer2, "base64ToArrayBuffer");
+function capitalize2(source) {
+  return source.charAt(0).toUpperCase() + source.slice(1);
+}
+__name4(capitalize2, "capitalize");
+function uncapitalize2(source) {
+  return source.charAt(0).toLowerCase() + source.slice(1);
+}
+__name4(uncapitalize2, "uncapitalize");
+function camelCase2(source) {
+  return source.replace(/[_-][a-z]/g, (str) => str.slice(1).toUpperCase());
+}
+__name4(camelCase2, "camelCase");
+function paramCase2(source) {
+  return uncapitalize2(source).replace(/_/g, "-").replace(/.[A-Z]+/g, (str) => str[0] + "-" + str.slice(1).toLowerCase());
+}
+__name4(paramCase2, "paramCase");
+function snakeCase2(source) {
+  return uncapitalize2(source).replace(/-/g, "_").replace(/.[A-Z]+/g, (str) => str[0] + "_" + str.slice(1).toLowerCase());
+}
+__name4(snakeCase2, "snakeCase");
+var camelize = camelCase2;
+var hyphenate = paramCase2;
+function trimSlash2(source) {
+  return source.replace(/\/$/, "");
+}
+__name4(trimSlash2, "trimSlash");
+function sanitize3(source) {
+  if (!source.startsWith("/"))
+    source = "/" + source;
+  return trimSlash2(source);
+}
+__name4(sanitize3, "sanitize");
+var Time2;
+((Time22) => {
+  Time22.millisecond = 1;
+  Time22.second = 1e3;
+  Time22.minute = Time22.second * 60;
+  Time22.hour = Time22.minute * 60;
+  Time22.day = Time22.hour * 24;
+  Time22.week = Time22.day * 7;
+  let timezoneOffset = (/* @__PURE__ */ new Date()).getTimezoneOffset();
+  function setTimezoneOffset(offset) {
+    timezoneOffset = offset;
+  }
+  Time22.setTimezoneOffset = setTimezoneOffset;
+  __name4(setTimezoneOffset, "setTimezoneOffset");
+  function getTimezoneOffset() {
+    return timezoneOffset;
+  }
+  Time22.getTimezoneOffset = getTimezoneOffset;
+  __name4(getTimezoneOffset, "getTimezoneOffset");
+  function getDateNumber(date = /* @__PURE__ */ new Date(), offset) {
+    if (typeof date === "number")
+      date = new Date(date);
+    if (offset === void 0)
+      offset = timezoneOffset;
+    return Math.floor((date.valueOf() / Time22.minute - offset) / 1440);
+  }
+  Time22.getDateNumber = getDateNumber;
+  __name4(getDateNumber, "getDateNumber");
+  function fromDateNumber(value, offset) {
+    const date = new Date(value * Time22.day);
+    if (offset === void 0)
+      offset = timezoneOffset;
+    return new Date(+date + offset * Time22.minute);
+  }
+  Time22.fromDateNumber = fromDateNumber;
+  __name4(fromDateNumber, "fromDateNumber");
+  const numeric = /\d+(?:\.\d+)?/.source;
+  const timeRegExp = new RegExp(`^${[
+    "w(?:eek(?:s)?)?",
+    "d(?:ay(?:s)?)?",
+    "h(?:our(?:s)?)?",
+    "m(?:in(?:ute)?(?:s)?)?",
+    "s(?:ec(?:ond)?(?:s)?)?"
+  ].map((unit) => `(${numeric}${unit})?`).join("")}$`);
+  function parseTime(source) {
+    const capture = timeRegExp.exec(source);
+    if (!capture)
+      return 0;
+    return (parseFloat(capture[1]) * Time22.week || 0) + (parseFloat(capture[2]) * Time22.day || 0) + (parseFloat(capture[3]) * Time22.hour || 0) + (parseFloat(capture[4]) * Time22.minute || 0) + (parseFloat(capture[5]) * Time22.second || 0);
+  }
+  Time22.parseTime = parseTime;
+  __name4(parseTime, "parseTime");
+  function parseDate(date) {
+    const parsed = parseTime(date);
+    if (parsed) {
+      date = Date.now() + parsed;
+    } else if (/^\d{1,2}(:\d{1,2}){1,2}$/.test(date)) {
+      date = `${(/* @__PURE__ */ new Date()).toLocaleDateString()}-${date}`;
+    } else if (/^\d{1,2}-\d{1,2}-\d{1,2}(:\d{1,2}){1,2}$/.test(date)) {
+      date = `${(/* @__PURE__ */ new Date()).getFullYear()}-${date}`;
+    }
+    return date ? new Date(date) : /* @__PURE__ */ new Date();
+  }
+  Time22.parseDate = parseDate;
+  __name4(parseDate, "parseDate");
+  function format(ms) {
+    const abs = Math.abs(ms);
+    if (abs >= Time22.day - Time22.hour / 2) {
+      return Math.round(ms / Time22.day) + "d";
+    } else if (abs >= Time22.hour - Time22.minute / 2) {
+      return Math.round(ms / Time22.hour) + "h";
+    } else if (abs >= Time22.minute - Time22.second / 2) {
+      return Math.round(ms / Time22.minute) + "m";
+    } else if (abs >= Time22.second) {
+      return Math.round(ms / Time22.second) + "s";
+    }
+    return ms + "ms";
+  }
+  Time22.format = format;
+  __name4(format, "format");
+  function toDigits(source, length = 2) {
+    return source.toString().padStart(length, "0");
+  }
+  Time22.toDigits = toDigits;
+  __name4(toDigits, "toDigits");
+  function template(template2, time = /* @__PURE__ */ new Date()) {
+    return template2.replace("yyyy", time.getFullYear().toString()).replace("yy", time.getFullYear().toString().slice(2)).replace("MM", toDigits(time.getMonth() + 1)).replace("dd", toDigits(time.getDate())).replace("hh", toDigits(time.getHours())).replace("mm", toDigits(time.getMinutes())).replace("ss", toDigits(time.getSeconds())).replace("SSS", toDigits(time.getMilliseconds(), 3));
+  }
+  Time22.template = template;
+  __name4(template, "template");
+})(Time2 || (Time2 = {}));
+
 // node_modules/schemastery-vue/src/utils.ts
 var primitive = ["string", "number", "boolean", "bitset", "const"];
 var dynamic = ["function", "transform", "is"];
@@ -1078,7 +1341,7 @@ function getChoices(schema) {
 function getFallback(schema, required = false) {
   if (!schema || schema.type === "union" && getChoices(schema).length === 1)
     return;
-  return clone(schema.meta.default) ?? (required ? inferFallback(schema) : void 0);
+  return clone2(schema.meta.default) ?? (required ? inferFallback(schema) : void 0);
 }
 function inferFallback(schema) {
   if (schema.type === "string")
@@ -1104,8 +1367,6 @@ function validate(schema) {
     return validate(schema.inner);
   } else if (schema.type === "tuple") {
     return schema.list.every((item) => primitive.includes(item.type));
-  } else if (schema.type === "any") {
-    return ["filter"].includes(schema.meta.role);
   } else {
     return primitive.includes(schema.type);
   }
@@ -1131,10 +1392,215 @@ function hasTitle(schema, root2) {
     return false;
   }
 }
+function optional(schema) {
+  if (schema.type === "const")
+    return schema;
+  if (schema.type === "object") {
+    return lib_default.object(valueMap2(schema.dict, optional));
+  } else if (schema.type === "tuple") {
+    return lib_default.tuple(schema.list.map(optional));
+  } else if (schema.type === "intersect") {
+    return lib_default.intersect(schema.list.map(optional));
+  } else if (schema.type === "union") {
+    return lib_default.union(schema.list.map(optional));
+  } else if (schema.type === "dict") {
+    return lib_default.dict(optional(schema.inner));
+  } else if (schema.type === "array") {
+    return lib_default.array(optional(schema.inner));
+  } else {
+    return lib_default(schema).required(false);
+  }
+}
+function check(schema, value) {
+  try {
+    optional(schema)(value);
+    return true;
+  } catch {
+    return false;
+  }
+}
+function useConfig(options) {
+  let stop;
+  const config2 = ref();
+  const { props, emit } = getCurrentInstance();
+  const doWatch = () => watch(config2, (value) => {
+    try {
+      if (options)
+        value = options.output(value);
+    } catch {
+      return;
+    }
+    if (deepEqual2(value, props.schema.meta.default, options == null ? void 0 : options.strict))
+      value = null;
+    emit("update:modelValue", value);
+  }, { deep: true });
+  watch([() => props.modelValue, () => props.schema], ([value, schema]) => {
+    stop == null ? void 0 : stop();
+    value ?? (value = getFallback(schema));
+    if (options)
+      value = options.input(value);
+    config2.value = value;
+    stop = doWatch();
+  }, { immediate: true });
+  return config2;
+}
+function useEntries() {
+  const { props } = getCurrentInstance();
+  const entries = useConfig({
+    strict: true,
+    input: (config2) => Object.entries(config2),
+    output: (config2) => {
+      if (props.schema.type === "array") {
+        return config2.map(([, value]) => value);
+      }
+      const result = {};
+      for (const [key, value] of config2) {
+        if (key in result)
+          throw new Error("duplicate entries");
+        result[key] = value;
+      }
+      return result;
+    }
+  });
+  return {
+    entries,
+    up(index) {
+      if (props.schema.type === "dict") {
+        entries.value.splice(index - 1, 0, ...entries.value.splice(index, 1));
+      } else {
+        const temp = entries.value[index][1];
+        entries.value[index][1] = entries.value[index - 1][1];
+        entries.value[index - 1][1] = temp;
+      }
+    },
+    down(index) {
+      if (props.schema.type === "dict") {
+        entries.value.splice(index + 1, 0, ...entries.value.splice(index, 1));
+      } else {
+        const temp = entries.value[index][1];
+        entries.value[index][1] = entries.value[index + 1][1];
+        entries.value[index + 1][1] = temp;
+      }
+    },
+    del(index) {
+      entries.value.splice(index, 1);
+    },
+    add() {
+      entries.value.push(["", null]);
+    }
+  };
+}
 
 // node_modules/schemastery-vue/src/index.ts
-function src_default2(app) {
+function form(app) {
   app.component("k-schema", Schema);
+}
+((form2) => {
+  form2.extensions = /* @__PURE__ */ new Set();
+  form2.extensions.add({
+    type: "bitset",
+    component: Bitset,
+    validate: (value) => typeof value === "number"
+  });
+  form2.extensions.add({
+    type: "array",
+    component: Group,
+    validate: (value) => Array.isArray(value)
+  });
+  form2.extensions.add({
+    type: "dict",
+    component: Group,
+    validate: (value) => typeof value === "object"
+  });
+  form2.extensions.add({
+    type: "object",
+    component: Object2,
+    validate: (value) => typeof value === "object"
+  });
+  form2.extensions.add({
+    type: "intersect",
+    component: Intersect,
+    validate: (value) => typeof value === "object"
+  });
+  form2.extensions.add({
+    type: "union",
+    role: "radio",
+    component: Radio
+  });
+  form2.extensions.add({
+    type: "array",
+    role: "table",
+    component: Table,
+    validate: (value) => Array.isArray(value)
+  });
+  form2.extensions.add({
+    type: "dict",
+    role: "table",
+    component: Table,
+    validate: (value) => typeof value === "object"
+  });
+  form2.extensions.add({
+    type: "string",
+    role: "textarea",
+    component: Textarea,
+    validate: (value) => typeof value === "string"
+  });
+  form2.extensions.add({
+    type: "tuple",
+    component: Tuple,
+    validate: (value) => Array.isArray(value)
+  });
+  form2.extensions.add({
+    type: "union",
+    component: Union
+  });
+})(form || (form = {}));
+var src_default2 = form;
+
+// node_modules/@koishijs/components/client/index.ts
+import Computed from "E:/world/codeSpace/gptbot/node_modules/@koishijs/components/client/computed.vue";
+import Comment from "E:/world/codeSpace/gptbot/node_modules/@koishijs/components/client/k-comment.vue";
+import Filter from "E:/world/codeSpace/gptbot/node_modules/@koishijs/components/client/k-filter.vue";
+import Form from "E:/world/codeSpace/gptbot/node_modules/@koishijs/components/client/k-form.vue";
+
+// node_modules/@koishijs/components/client/virtual/index.ts
+import VirtualList from "E:/world/codeSpace/gptbot/node_modules/@koishijs/components/client/virtual/list.vue";
+function virtual_default(app) {
+  app.component("virtual-list", VirtualList);
+}
+
+// node_modules/@koishijs/components/client/chat/index.ts
+import ChatInput from "E:/world/codeSpace/gptbot/node_modules/@koishijs/components/client/chat/input.vue";
+import MessageContent from "E:/world/codeSpace/gptbot/node_modules/@koishijs/components/client/chat/content.vue";
+
+// node_modules/@koishijs/components/client/index.ts
+src_default2.extensions.add({
+  type: "union",
+  role: "computed",
+  component: Computed
+});
+function components(app) {
+  app.use(src_default2);
+  app.use(virtual_default);
+  app.component("k-comment", Comment);
+  app.component("k-filter", Filter);
+  app.component("k-form", Form);
+}
+((components2) => {
+  components2.extensions = src_default2.extensions;
+})(components || (components = {}));
+var client_default = components;
+
+// node_modules/@koishijs/client/client/components/common/index.ts
+import Badge from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/common/k-badge.vue";
+import Button from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/common/k-button.vue";
+import Hint from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/common/k-hint.vue";
+import Tab from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/common/k-tab.vue";
+function common_default(app) {
+  app.component("k-badge", Badge);
+  app.component("k-button", Button);
+  app.component("k-hint", Hint);
+  app.component("k-tab", Tab);
 }
 
 // node_modules/@koishijs/client/client/components/index.ts
@@ -1264,16 +1730,6 @@ function layout_default(app) {
   app.component("k-tab-item", TabItem);
 }
 
-// node_modules/@koishijs/client/client/components/notice/index.ts
-import Badge from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/notice/badge.vue";
-import Comment2 from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/notice/comment.vue";
-import Hint from "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/components/notice/hint.vue";
-function notice_default(app) {
-  app.component("k-badge", Badge);
-  app.component("k-comment", Comment2);
-  app.component("k-hint", Hint);
-}
-
 // node_modules/@koishijs/client/client/components/slot.ts
 var slot_default = defineComponent({
   props: {
@@ -1294,91 +1750,6 @@ var slot_default = defineComponent({
 
 // node_modules/@koishijs/client/client/components/index.ts
 import "E:/world/codeSpace/gptbot/node_modules/element-plus/dist/index.css";
-
-// node_modules/@satorijs/components/src/chat/index.ts
-import ChatInput from "E:/world/codeSpace/gptbot/node_modules/@satorijs/components/src/chat/input.vue";
-import MessageContent from "E:/world/codeSpace/gptbot/node_modules/@satorijs/components/src/chat/content.vue";
-
-// node_modules/@satorijs/components/src/popper/index.ts
-import Dropdown from "E:/world/codeSpace/gptbot/node_modules/@satorijs/components/src/popper/dropdown.vue";
-import Popper from "E:/world/codeSpace/gptbot/node_modules/@satorijs/components/src/popper/popper.vue";
-import Tooltip from "E:/world/codeSpace/gptbot/node_modules/@satorijs/components/src/popper/tooltip.vue";
-
-// node_modules/@satorijs/components/src/popper/shared.ts
-var injections;
-((injections2) => {
-  injections2.placement = Symbol("INJECTION_PLACEMENT");
-  injections2.teleport = Symbol("INJECTION_TELEPORT");
-})(injections || (injections = {}));
-
-// node_modules/@satorijs/components/src/virtual/item.ts
-var useRefDirective = (ref2) => ({
-  mounted(el) {
-    ref2.value = el;
-  },
-  updated(el) {
-    ref2.value = el;
-  },
-  beforeUnmount() {
-    ref2.value = null;
-  }
-});
-function findFirstLegitChild(node) {
-  if (!node)
-    return null;
-  for (const child of node) {
-    if (typeof child === "object") {
-      switch (child.type) {
-        case Comment:
-          continue;
-        case Text:
-          break;
-        case Fragment:
-          return findFirstLegitChild(child.children);
-        default:
-          if (typeof child.type === "string")
-            return child;
-          return child;
-      }
-    }
-    return h("span", child);
-  }
-}
-var VirtualItem = defineComponent({
-  props: {
-    class: {}
-  },
-  emits: ["resize"],
-  setup(props, { attrs, slots, emit }) {
-    let resizeObserver;
-    const root2 = ref();
-    watch(root2, (value) => {
-      resizeObserver == null ? void 0 : resizeObserver.disconnect();
-      if (!value)
-        return;
-      resizeObserver = new ResizeObserver(dispatchSizeChange);
-      resizeObserver.observe(value);
-    });
-    function dispatchSizeChange() {
-      if (!root2.value)
-        return;
-      const marginTop = +getComputedStyle(root2.value).marginTop.slice(0, -2);
-      emit("resize", root2.value.offsetHeight + marginTop);
-    }
-    const directive = useRefDirective(root2);
-    return () => {
-      var _a;
-      const head = findFirstLegitChild((_a = slots.default) == null ? void 0 : _a.call(slots, attrs));
-      return withDirectives(head, [[directive]]);
-    };
-  }
-});
-var item_default = VirtualItem;
-
-// node_modules/@satorijs/components/src/virtual/index.ts
-import VirtualList from "E:/world/codeSpace/gptbot/node_modules/@satorijs/components/src/virtual/list.vue";
-
-// node_modules/@koishijs/client/client/components/index.ts
 var loading = ElLoading.service;
 var message = ElMessage;
 var messageBox = ElMessageBox;
@@ -1386,10 +1757,9 @@ function components_default(app) {
   app.use(installer);
   app.component("k-markdown", src_default);
   app.use(common_default);
-  app.use(src_default2);
+  app.use(client_default);
   app.use(icons_exports);
   app.use(layout_default);
-  app.use(notice_default);
   app.component("k-slot", slot_default);
 }
 
@@ -1467,9 +1837,9 @@ var initTask = new Promise((resolve) => {
 });
 
 // node_modules/cordis/lib/index.mjs
-var __defProp4 = Object.defineProperty;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp4(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __name4 = (target, value) => __defProp4(target, "name", { value, configurable: true });
+var __defProp5 = Object.defineProperty;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp5(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __name5 = (target, value) => __defProp5(target, "name", { value, configurable: true });
 var __publicField2 = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
   return value;
@@ -1477,15 +1847,15 @@ var __publicField2 = (obj, key, value) => {
 function isBailed(value) {
   return value !== null && value !== false && value !== void 0;
 }
-__name4(isBailed, "isBailed");
+__name5(isBailed, "isBailed");
 var Lifecycle = class {
   constructor(root2) {
     __publicField(this, "isActive", false);
     __publicField(this, "_tasks", /* @__PURE__ */ new Set());
     __publicField(this, "_hooks", {});
     this.root = root2;
-    defineProperty(this, Context2.current, root2);
-    defineProperty(this.on("internal/hook", function(name, listener, prepend) {
+    defineProperty2(this, Context2.current, root2);
+    defineProperty2(this.on("internal/hook", function(name, listener, prepend) {
       const method = prepend ? "unshift" : "push";
       const { scope } = this[Context2.current];
       const { runtime, disposables } = scope;
@@ -1493,11 +1863,11 @@ var Lifecycle = class {
         scope.ensure(async () => listener());
       } else if (name === "dispose") {
         disposables[method](listener);
-        defineProperty(listener, "name", "event <dispose>");
-        return () => remove(disposables, listener);
+        defineProperty2(listener, "name", "event <dispose>");
+        return () => remove2(disposables, listener);
       } else if (name === "fork") {
         runtime.forkables[method](listener);
-        return scope.collect("event <fork>", () => remove(runtime.forkables, listener));
+        return scope.collect("event <fork>", () => remove2(runtime.forkables, listener));
       }
     }), Context2.static, root2.scope);
   }
@@ -1601,7 +1971,7 @@ var Lifecycle = class {
     this.root.scope.reset();
   }
 };
-__name4(Lifecycle, "Lifecycle");
+__name5(Lifecycle, "Lifecycle");
 __publicField2(Lifecycle, "methods", ["on", "once", "off", "before", "after", "parallel", "emit", "serial", "bail", "start", "stop"]);
 function isConstructor(func) {
   if (!func.prototype)
@@ -1610,11 +1980,11 @@ function isConstructor(func) {
     return false;
   return true;
 }
-__name4(isConstructor, "isConstructor");
+__name5(isConstructor, "isConstructor");
 function getConstructor(instance) {
   return Object.getPrototypeOf(instance).constructor;
 }
-__name4(getConstructor, "getConstructor");
+__name5(getConstructor, "getConstructor");
 function resolveConfig(plugin, config2) {
   if (config2 === false)
     return;
@@ -1626,7 +1996,7 @@ function resolveConfig(plugin, config2) {
     config2 = schema(config2);
   return config2;
 }
-__name4(resolveConfig, "resolveConfig");
+__name5(resolveConfig, "resolveConfig");
 var EffectScope = class {
   constructor(parent, config2) {
     __publicField(this, "uid");
@@ -1651,8 +2021,8 @@ var EffectScope = class {
     return this.runtime.isReactive ? this.proxy : this.config;
   }
   collect(label, callback) {
-    const dispose = defineProperty(() => {
-      remove(this.disposables, dispose);
+    const dispose = defineProperty2(() => {
+      remove2(this.disposables, dispose);
       return callback();
     }, "name", label);
     this.disposables.push(dispose);
@@ -1700,13 +2070,13 @@ var EffectScope = class {
   setup() {
     if (!this.runtime.using.length)
       return;
-    defineProperty(this.context.on("internal/before-service", (name) => {
+    defineProperty2(this.context.on("internal/before-service", (name) => {
       if (!this.runtime.using.includes(name))
         return;
       this._updateStatus();
       this.reset();
     }), Context2.static, this);
-    defineProperty(this.context.on("internal/service", (name) => {
+    defineProperty2(this.context.on("internal/service", (name) => {
       if (!this.runtime.using.includes(name))
         return;
       this.start();
@@ -1729,7 +2099,7 @@ var EffectScope = class {
     this.acceptors.push(acceptor);
     if (acceptor.immediate)
       (_a = acceptor.callback) == null ? void 0 : _a.call(acceptor, this.config);
-    return this.collect(`accept <${(keys == null ? void 0 : keys.join(", ")) || "*"}>`, () => remove(this.acceptors, acceptor));
+    return this.collect(`accept <${(keys == null ? void 0 : keys.join(", ")) || "*"}>`, () => remove2(this.acceptors, acceptor));
   }
   decline(keys) {
     return this.accept(keys, () => true);
@@ -1740,8 +2110,8 @@ var EffectScope = class {
     if (forced === false)
       return [false, false];
     const modified = /* @__PURE__ */ Object.create(null);
-    const checkPropertyUpdate = __name4((key) => {
-      const result = modified[key] ?? (modified[key] = !deepEqual(this.config[key], resolved[key]));
+    const checkPropertyUpdate = __name5((key) => {
+      const result = modified[key] ?? (modified[key] = !deepEqual2(this.config[key], resolved[key]));
       hasUpdate || (hasUpdate = result);
       return result;
     }, "checkPropertyUpdate");
@@ -1777,17 +2147,17 @@ var EffectScope = class {
     return [hasUpdate, shouldRestart];
   }
 };
-__name4(EffectScope, "EffectScope");
+__name5(EffectScope, "EffectScope");
 var ForkScope = class extends EffectScope {
   constructor(parent, config2, runtime) {
     super(parent, config2);
     __publicField(this, "dispose");
     this.runtime = runtime;
-    this.dispose = defineProperty(parent.scope.collect(`fork <${parent.runtime.name}>`, () => {
+    this.dispose = defineProperty2(parent.scope.collect(`fork <${parent.runtime.name}>`, () => {
       this.uid = null;
       this.reset();
-      const result = remove(runtime.disposables, this.dispose);
-      if (remove(runtime.children, this) && !runtime.children.length) {
+      const result = remove2(runtime.disposables, this.dispose);
+      if (remove2(runtime.children, this) && !runtime.children.length) {
         parent.registry.delete(runtime.plugin);
       }
       this.context.emit("internal/fork", this);
@@ -1826,7 +2196,7 @@ var ForkScope = class extends EffectScope {
       state.restart();
   }
 };
-__name4(ForkScope, "ForkScope");
+__name5(ForkScope, "ForkScope");
 var MainScope = class extends EffectScope {
   constructor(registry2, plugin, config2) {
     super(registry2[Context2.current], config2);
@@ -1927,17 +2297,17 @@ var MainScope = class extends EffectScope {
       this.restart();
   }
 };
-__name4(MainScope, "MainScope");
+__name5(MainScope, "MainScope");
 function isApplicable(object) {
   return object && typeof object === "object" && typeof object.apply === "function";
 }
-__name4(isApplicable, "isApplicable");
+__name5(isApplicable, "isApplicable");
 var Registry = class extends Map {
   constructor(root2, config2) {
     super();
     __publicField(this, "_counter", 0);
     this.root = root2;
-    defineProperty(this, Context2.current, root2);
+    defineProperty2(this, Context2.current, root2);
     root2.scope = new MainScope(this, null, config2);
     root2.scope.runtime.isReactive = true;
   }
@@ -1989,12 +2359,12 @@ var Registry = class extends Map {
     return this.delete(plugin);
   }
 };
-__name4(Registry, "Registry");
+__name5(Registry, "Registry");
 __publicField2(Registry, "methods", ["using", "plugin", "dispose"]);
 var _Context = class {
   constructor(config2) {
     const options = resolveConfig(getConstructor(this), config2);
-    const attach = __name4((internal) => {
+    const attach = __name5((internal) => {
       if (!internal)
         return;
       attach(Object.getPrototypeOf(internal));
@@ -2028,7 +2398,7 @@ var _Context = class {
   }
 };
 var Context2 = _Context;
-__name4(Context2, "Context");
+__name5(Context2, "Context");
 __publicField2(Context2, "config", Symbol("config"));
 __publicField2(Context2, "events", Symbol("events"));
 __publicField2(Context2, "static", Symbol("static"));
@@ -2040,10 +2410,10 @@ __publicField2(Context2, "immediate", Symbol("immediate"));
 ((Context22) => {
   function mixin(name, options) {
     for (const key of options.methods || []) {
-      const method = defineProperty(function(...args) {
+      const method = defineProperty2(function(...args) {
         return this[name][key](...args);
       }, "name", key);
-      defineProperty(this.prototype, key, method);
+      defineProperty2(this.prototype, key, method);
     }
     for (const key of options.properties || []) {
       Object.defineProperty(this.prototype, key, {
@@ -2058,7 +2428,7 @@ __publicField2(Context2, "immediate", Symbol("immediate"));
     }
   }
   Context22.mixin = mixin;
-  __name4(mixin, "mixin");
+  __name5(mixin, "mixin");
   function service(name, options = {}) {
     if (Object.prototype.hasOwnProperty.call(this.prototype, name))
       return;
@@ -2070,7 +2440,7 @@ __publicField2(Context2, "immediate", Symbol("immediate"));
         const value = this.root[key];
         if (!value)
           return;
-        defineProperty(value, Context22.current, this);
+        defineProperty2(value, Context22.current, this);
         return value;
       },
       set(value) {
@@ -2090,7 +2460,7 @@ __publicField2(Context2, "immediate", Symbol("immediate"));
         }
         this.root[key] = value;
         if (value && typeof value === "object") {
-          defineProperty(value, Context22.source, this);
+          defineProperty2(value, Context22.source, this);
         }
         if (typeof name === "string") {
           this.emit(self, "internal/service", name, oldValue);
@@ -2104,7 +2474,7 @@ __publicField2(Context2, "immediate", Symbol("immediate"));
     this.mixin(name, options);
   }
   Context22.service = service;
-  __name4(service, "service");
+  __name5(service, "service");
   function ensureInternal(prototype) {
     if (Object.prototype.hasOwnProperty.call(prototype, Context22.internal)) {
       return prototype[Context22.internal];
@@ -2112,7 +2482,7 @@ __publicField2(Context2, "immediate", Symbol("immediate"));
     const parent = ensureInternal(Object.getPrototypeOf(prototype));
     return prototype[Context22.internal] = Object.create(parent);
   }
-  __name4(ensureInternal, "ensureInternal");
+  __name5(ensureInternal, "ensureInternal");
 })(Context2 || (Context2 = {}));
 Context2.prototype[Context2.internal] = /* @__PURE__ */ Object.create(null);
 Context2.service("registry", Registry);
@@ -2125,7 +2495,7 @@ var Service = class {
   constructor(ctx, name, immediate) {
     this.ctx = ctx;
     getConstructor(ctx.root).service(name);
-    defineProperty(this, Context2.current, ctx);
+    defineProperty2(this, Context2.current, ctx);
     if (immediate) {
       this[Context2.immediate] = name;
     }
@@ -2147,7 +2517,267 @@ var Service = class {
     return this[Context2.current];
   }
 };
-__name4(Service, "Service");
+__name5(Service, "Service");
+
+// node_modules/@koishijs/client/node_modules/cosmokit/lib/index.mjs
+var __defProp6 = Object.defineProperty;
+var __name6 = (target, value) => __defProp6(target, "name", { value, configurable: true });
+function noop3() {
+}
+__name6(noop3, "noop");
+function isNullable3(value) {
+  return value === null || value === void 0;
+}
+__name6(isNullable3, "isNullable");
+function isPlainObject3(data) {
+  return data && typeof data === "object" && !Array.isArray(data);
+}
+__name6(isPlainObject3, "isPlainObject");
+function valueMap3(object, transform) {
+  return Object.fromEntries(Object.entries(object).map(([key, value]) => [key, transform(value, key)]));
+}
+__name6(valueMap3, "valueMap");
+function is3(type, value) {
+  return type in globalThis && value instanceof globalThis[type] || Object.prototype.toString.call(value).slice(8, -1) === type;
+}
+__name6(is3, "is");
+function clone3(source) {
+  if (!source || typeof source !== "object")
+    return source;
+  if (Array.isArray(source))
+    return source.map(clone3);
+  if (is3("Date", source))
+    return new Date(source.valueOf());
+  if (is3("RegExp", source))
+    return new RegExp(source.source, source.flags);
+  return valueMap3(source, clone3);
+}
+__name6(clone3, "clone");
+function deepEqual3(a, b, strict) {
+  if (a === b)
+    return true;
+  if (!strict && isNullable3(a) && isNullable3(b))
+    return true;
+  if (typeof a !== typeof b)
+    return false;
+  if (typeof a !== "object")
+    return false;
+  if (!a || !b)
+    return false;
+  if (Array.isArray(a)) {
+    if (!Array.isArray(b) || a.length !== b.length)
+      return false;
+    return a.every((item, index) => deepEqual3(item, b[index]));
+  } else if (Array.isArray(b)) {
+    return false;
+  }
+  return Object.keys({ ...a, ...b }).every((key) => deepEqual3(a[key], b[key], strict));
+}
+__name6(deepEqual3, "deepEqual");
+function pick3(source, keys, forced) {
+  if (!keys)
+    return { ...source };
+  const result = {};
+  for (const key of keys) {
+    if (forced || key in source)
+      result[key] = source[key];
+  }
+  return result;
+}
+__name6(pick3, "pick");
+function omit3(source, keys) {
+  if (!keys)
+    return { ...source };
+  const result = { ...source };
+  for (const key of keys) {
+    Reflect.deleteProperty(result, key);
+  }
+  return result;
+}
+__name6(omit3, "omit");
+function defineProperty3(object, key, value) {
+  return Object.defineProperty(object, key, { writable: true, value });
+}
+__name6(defineProperty3, "defineProperty");
+function contain3(array1, array2) {
+  return array2.every((item) => array1.includes(item));
+}
+__name6(contain3, "contain");
+function intersection3(array1, array2) {
+  return array1.filter((item) => array2.includes(item));
+}
+__name6(intersection3, "intersection");
+function difference3(array1, array2) {
+  return array1.filter((item) => !array2.includes(item));
+}
+__name6(difference3, "difference");
+function union3(array1, array2) {
+  return Array.from(/* @__PURE__ */ new Set([...array1, ...array2]));
+}
+__name6(union3, "union");
+function deduplicate3(array) {
+  return [...new Set(array)];
+}
+__name6(deduplicate3, "deduplicate");
+function remove3(list, item) {
+  const index = list.indexOf(item);
+  if (index >= 0) {
+    list.splice(index, 1);
+    return true;
+  } else {
+    return false;
+  }
+}
+__name6(remove3, "remove");
+function makeArray3(source) {
+  return Array.isArray(source) ? source : isNullable3(source) ? [] : [source];
+}
+__name6(makeArray3, "makeArray");
+function arrayBufferToBase643(buffer) {
+  if (typeof Buffer !== "undefined") {
+    return Buffer.from(buffer).toString("base64");
+  }
+  let binary = "";
+  const bytes = new Uint8Array(buffer);
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return btoa(binary);
+}
+__name6(arrayBufferToBase643, "arrayBufferToBase64");
+function base64ToArrayBuffer3(base64) {
+  if (typeof Buffer !== "undefined") {
+    return Buffer.from(base64, "base64").buffer;
+  }
+  const binary = atob(base64.replace(/\s/g, ""));
+  const buffer = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    buffer[i] = binary.charCodeAt(i);
+  }
+  return buffer;
+}
+__name6(base64ToArrayBuffer3, "base64ToArrayBuffer");
+function capitalize3(source) {
+  return source.charAt(0).toUpperCase() + source.slice(1);
+}
+__name6(capitalize3, "capitalize");
+function uncapitalize3(source) {
+  return source.charAt(0).toLowerCase() + source.slice(1);
+}
+__name6(uncapitalize3, "uncapitalize");
+function camelCase3(source) {
+  return source.replace(/[_-][a-z]/g, (str) => str.slice(1).toUpperCase());
+}
+__name6(camelCase3, "camelCase");
+function paramCase3(source) {
+  return uncapitalize3(source).replace(/_/g, "-").replace(/.[A-Z]+/g, (str) => str[0] + "-" + str.slice(1).toLowerCase());
+}
+__name6(paramCase3, "paramCase");
+function snakeCase3(source) {
+  return uncapitalize3(source).replace(/-/g, "_").replace(/.[A-Z]+/g, (str) => str[0] + "_" + str.slice(1).toLowerCase());
+}
+__name6(snakeCase3, "snakeCase");
+function trimSlash3(source) {
+  return source.replace(/\/$/, "");
+}
+__name6(trimSlash3, "trimSlash");
+function sanitize4(source) {
+  if (!source.startsWith("/"))
+    source = "/" + source;
+  return trimSlash3(source);
+}
+__name6(sanitize4, "sanitize");
+var Time3;
+((Time22) => {
+  Time22.millisecond = 1;
+  Time22.second = 1e3;
+  Time22.minute = Time22.second * 60;
+  Time22.hour = Time22.minute * 60;
+  Time22.day = Time22.hour * 24;
+  Time22.week = Time22.day * 7;
+  let timezoneOffset = (/* @__PURE__ */ new Date()).getTimezoneOffset();
+  function setTimezoneOffset(offset) {
+    timezoneOffset = offset;
+  }
+  Time22.setTimezoneOffset = setTimezoneOffset;
+  __name6(setTimezoneOffset, "setTimezoneOffset");
+  function getTimezoneOffset() {
+    return timezoneOffset;
+  }
+  Time22.getTimezoneOffset = getTimezoneOffset;
+  __name6(getTimezoneOffset, "getTimezoneOffset");
+  function getDateNumber(date = /* @__PURE__ */ new Date(), offset) {
+    if (typeof date === "number")
+      date = new Date(date);
+    if (offset === void 0)
+      offset = timezoneOffset;
+    return Math.floor((date.valueOf() / Time22.minute - offset) / 1440);
+  }
+  Time22.getDateNumber = getDateNumber;
+  __name6(getDateNumber, "getDateNumber");
+  function fromDateNumber(value, offset) {
+    const date = new Date(value * Time22.day);
+    if (offset === void 0)
+      offset = timezoneOffset;
+    return new Date(+date + offset * Time22.minute);
+  }
+  Time22.fromDateNumber = fromDateNumber;
+  __name6(fromDateNumber, "fromDateNumber");
+  const numeric = /\d+(?:\.\d+)?/.source;
+  const timeRegExp = new RegExp(`^${[
+    "w(?:eek(?:s)?)?",
+    "d(?:ay(?:s)?)?",
+    "h(?:our(?:s)?)?",
+    "m(?:in(?:ute)?(?:s)?)?",
+    "s(?:ec(?:ond)?(?:s)?)?"
+  ].map((unit) => `(${numeric}${unit})?`).join("")}$`);
+  function parseTime(source) {
+    const capture = timeRegExp.exec(source);
+    if (!capture)
+      return 0;
+    return (parseFloat(capture[1]) * Time22.week || 0) + (parseFloat(capture[2]) * Time22.day || 0) + (parseFloat(capture[3]) * Time22.hour || 0) + (parseFloat(capture[4]) * Time22.minute || 0) + (parseFloat(capture[5]) * Time22.second || 0);
+  }
+  Time22.parseTime = parseTime;
+  __name6(parseTime, "parseTime");
+  function parseDate(date) {
+    const parsed = parseTime(date);
+    if (parsed) {
+      date = Date.now() + parsed;
+    } else if (/^\d{1,2}(:\d{1,2}){1,2}$/.test(date)) {
+      date = `${(/* @__PURE__ */ new Date()).toLocaleDateString()}-${date}`;
+    } else if (/^\d{1,2}-\d{1,2}-\d{1,2}(:\d{1,2}){1,2}$/.test(date)) {
+      date = `${(/* @__PURE__ */ new Date()).getFullYear()}-${date}`;
+    }
+    return date ? new Date(date) : /* @__PURE__ */ new Date();
+  }
+  Time22.parseDate = parseDate;
+  __name6(parseDate, "parseDate");
+  function format(ms) {
+    const abs = Math.abs(ms);
+    if (abs >= Time22.day - Time22.hour / 2) {
+      return Math.round(ms / Time22.day) + "d";
+    } else if (abs >= Time22.hour - Time22.minute / 2) {
+      return Math.round(ms / Time22.hour) + "h";
+    } else if (abs >= Time22.minute - Time22.second / 2) {
+      return Math.round(ms / Time22.minute) + "m";
+    } else if (abs >= Time22.second) {
+      return Math.round(ms / Time22.second) + "s";
+    }
+    return ms + "ms";
+  }
+  Time22.format = format;
+  __name6(format, "format");
+  function toDigits(source, length = 2) {
+    return source.toString().padStart(length, "0");
+  }
+  Time22.toDigits = toDigits;
+  __name6(toDigits, "toDigits");
+  function template(template2, time = /* @__PURE__ */ new Date()) {
+    return template2.replace("yyyy", time.getFullYear().toString()).replace("yy", time.getFullYear().toString().slice(2)).replace("MM", toDigits(time.getMonth() + 1)).replace("dd", toDigits(time.getDate())).replace("hh", toDigits(time.getHours())).replace("mm", toDigits(time.getMinutes())).replace("ss", toDigits(time.getSeconds())).replace("SSS", toDigits(time.getMilliseconds(), 3));
+  }
+  Time22.template = template;
+  __name6(template, "template");
+})(Time3 || (Time3 = {}));
 
 // node_modules/@koishijs/client/client/activity.ts
 var activities = reactive({});
@@ -2155,7 +2785,7 @@ var Activity = class {
   constructor(options) {
     this.options = options;
     this._disposables = [];
-    Object.assign(this, omit(options, ["icon", "name", "desc", "position"]));
+    Object.assign(this, omit2(options, ["icon", "name", "desc", "position"]));
     if ("path" in options) {
       const { path, id = path, component } = options;
       this._disposables.push(router.addRoute({ path, name: id, component, meta: { activity: this } }));
@@ -2233,7 +2863,7 @@ var Context3 = class extends Context2 {
     } else {
       list.push(options);
     }
-    return this.scope.collect("view", () => remove(list, options));
+    return this.scope.collect("view", () => remove3(list, options));
   }
   page(options) {
     const activity = new Activity(options);
@@ -2241,11 +2871,15 @@ var Context3 = class extends Context2 {
       return activity.dispose();
     });
   }
+  schema(extension) {
+    client_default.extensions.add(extension);
+    return this.scope.collect("schema", () => client_default.extensions.delete(extension));
+  }
 };
 
 // node_modules/@koishijs/client/client/index.ts
 import "E:/world/codeSpace/gptbot/node_modules/@koishijs/client/client/styles/index.scss";
-var client_default = components_default;
+var client_default2 = components_default;
 var router = createRouter({
   history: createWebHistory(config.uiPath),
   linkActiveClass: "active",
@@ -2291,7 +2925,7 @@ var Card2;
       if (!fields.every((key) => store[key]))
         return;
       let value = content(store);
-      if (isNullable(value))
+      if (isNullable2(value))
         return;
       if (type === "size") {
         if (value >= (1 << 20) * 1e3) {
@@ -2313,36 +2947,35 @@ export {
   ChatImage,
   ChatInput,
   Context3 as Context,
-  Dropdown,
   IconClose,
   IconEllipsis,
   IconExternal,
   IconEye,
   IconEyeSlash,
   MessageContent,
-  Popper,
   lib_default as Schema,
-  Time,
-  Tooltip,
-  item_default as VirtualItem,
+  SchemaBase,
+  SchemaPrimitive,
+  Time2 as Time,
   VirtualList,
   activities,
-  arrayBufferToBase64,
-  base64ToArrayBuffer,
-  camelCase,
+  arrayBufferToBase642 as arrayBufferToBase64,
+  base64ToArrayBuffer2 as base64ToArrayBuffer,
+  camelCase2 as camelCase,
   camelize,
-  capitalize,
-  clone,
+  capitalize2 as capitalize,
+  check,
+  clone2 as clone,
   config,
   connect,
-  contain,
+  contain2 as contain,
   createStorage,
-  deduplicate,
-  deepEqual,
-  client_default as default,
+  deduplicate2 as deduplicate,
+  deepEqual2 as deepEqual,
+  client_default2 as default,
   defineExtension,
-  defineProperty,
-  difference,
+  defineProperty2 as defineProperty,
+  difference2 as difference,
   getChoices,
   getFallback,
   config as global,
@@ -2351,39 +2984,40 @@ export {
   icons_exports as icons,
   inferFallback,
   initTask,
-  injections,
-  intersection,
-  is,
+  intersection2 as intersection,
+  is2 as is,
   isLeftAsideOpen,
-  isNullable,
+  isNullable2 as isNullable,
   isObjectSchema,
-  isPlainObject,
+  isPlainObject2 as isPlainObject,
   loading,
-  makeArray,
+  makeArray2 as makeArray,
   message,
   messageBox,
-  noop,
-  omit,
-  paramCase,
-  pick,
+  noop2 as noop,
+  omit2 as omit,
+  paramCase2 as paramCase,
+  pick2 as pick,
   progress,
   provideStorage,
   queue,
   receive,
-  remove,
+  remove2 as remove,
   root,
   router,
-  sanitize2 as sanitize,
+  sanitize3 as sanitize,
   send,
-  snakeCase,
+  snakeCase2 as snakeCase,
   socket,
   store,
-  trimSlash,
-  uncapitalize,
-  union,
+  trimSlash2 as trimSlash,
+  uncapitalize2 as uncapitalize,
+  union2 as union,
+  useConfig,
+  useEntries,
   useStorage,
   validate,
-  valueMap,
+  valueMap2 as valueMap,
   views
 };
 //# sourceMappingURL=@koishijs_client.js.map

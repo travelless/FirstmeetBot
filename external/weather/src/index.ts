@@ -15,38 +15,39 @@ export function apply(ctx: Context) {
       if(city === undefined){
         city = "杭州"
       }
-      let weather = await weatherQuery(city)
-      if(weather == "城市名错误"){
+      let weatherForecast = await weatherQuery(city,'all')
+      let weatherNow = await weatherQuery(city,'base')
+      if(weatherForecast == "城市名错误"){
         console.log("城市名错误!!!!");
         return "城市名错误"
       }else{
-        weather = weather.forecasts[0]
+        weatherForecast = weatherForecast.forecasts[0]
+        weatherNow = weatherNow.lives[0]
       }
-      console.log(weather);
       let message = `<>   
-                    <p>时间： ${weather.reporttime} </p> 
-                    <p>地区： ${weather.city}</p> 
+                    <p>时间： ${weatherForecast.reporttime} </p> 
+                    <p>地区： ${weatherForecast.city}</p> 
                     <p>今日天气： </p>
-                    <p>          白天-${weather.casts[0].dayweather}  晚上-${weather.casts[0].nightweather}</p>
-                    <p>          温度 ${weather.casts[0].nighttemp}-${weather.casts[0].daytemp} ℃</p>
-                    <p>          风向 ${weather.casts[0].daywind}  </p>
-                    <p>          风力 ${weather.casts[0].daypower} 级</p>
+                    <p>          白天-${weatherForecast.casts[0].dayweather}  晚上-${weatherForecast.casts[0].nightweather}</p>
+                    <p>          温度 ${weatherForecast.casts[0].nighttemp}-${weatherForecast.casts[0].daytemp} ℃</p>
+                    <p>          风向 ${weatherForecast.casts[0].daywind}  </p>
+                    <p>          风力 ${weatherForecast.casts[0].daypower} 级</p>
                     <p>明日天气：</p>
-                    <p>          白天-${weather.casts[1].dayweather}  晚上-${weather.casts[1].nightweather}</p>
-                    <p>          温度 ${weather.casts[1].nighttemp}-${weather.casts[1].daytemp} ℃</p>
-                    <p>          风向 ${weather.casts[1].daywind}  </p>
-                    <p>          风力 ${weather.casts[1].daypower} 级</p> 
+                    <p>          白天-${weatherForecast.casts[1].dayweather}  晚上-${weatherForecast.casts[1].nightweather}</p>
+                    <p>          温度 ${weatherForecast.casts[1].nighttemp}-${weatherForecast.casts[1].daytemp} ℃</p>
+                    <p>          风向 ${weatherForecast.casts[1].daywind}  </p>
+                    <p>          风力 ${weatherForecast.casts[1].daypower} 级</p> 
                     </>`
       return message
     })
 }
 
-export async function weatherQuery(city:string) {
+export async function weatherQuery(city:string, extensions?: string) {
   console.log(city);
   let params = {
     key: process.env.WEATHER_QUERY_KEY,
     city: "330100",
-    extensions: 'all',
+    extensions: extensions,
     output: 'json',
   }
   let idx = 0

@@ -53,4 +53,5 @@ plugins:
     $filter: {}
   pg-database:6w7cpf: null
   test:nxcsd7: null
-  hdu-crouse:60fmbs: null
+  hdu-course:60fmbs: null
+  ~hdu-course:25j78q: {}
