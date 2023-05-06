@@ -1,8 +1,7 @@
-import request from 'request'
-
+const request = require('request')
 const requests = request.defaults({ jar: true })
 
-export class Axios {
+class Axios {
     constructor() {
         this.request = requests
         this.cookieJar = requests.jar()
@@ -35,3 +34,5 @@ export class Axios {
         })
     }
 }
+
+exports.Axios = Axios

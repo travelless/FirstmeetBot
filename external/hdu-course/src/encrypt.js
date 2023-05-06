@@ -923,4 +923,4 @@ function generateKeys(keyByte) {
     return keys
 }
 //导出所有函数
-export { strEnc }
+exports.strEnc = strEnc
