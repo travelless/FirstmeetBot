@@ -28,7 +28,10 @@ export async function apply(ctx: Context) {
   ctx.command('course', '获取学业信息')
     .action(async({ session }) => {
       let user_id = parseInt(session.userId)
+      console.log(123);
       let stuData = await ctx.pgdb.getStu(user_id)
+      console.log(stuData);
+
       return await course(stuData)
     })
 }
