@@ -1,6 +1,7 @@
 import { App, Context, Schema } from 'koishi'
 import { getHDUcourse, getModule, getHDUToken } from './function'
 import {} from 'koishi-plugin-pg-database'
+import { createContext } from 'vm'
 
 export const name = 'hdu-course'
 
@@ -28,17 +29,22 @@ export async function apply(ctx: Context) {
   ctx.command('course', '获取学业信息')
     .action(async({ session }) => {
       let user_id = parseInt(session.userId)
-      console.log(123);
       let stuData = await ctx.pgdb.getStu(user_id)
-      console.log(stuData);
-
-      return await course(stuData)
+      return await course(stuData,ctx)
     })
 }
 
-export async function course(stuData){
-  // let token = stuData.token
-  let token = await getHDUToken(stuData.stu_num.toString(),stuData.stu_pin)
+export async function course(stuData,ctx){
+  let token
+  try{
+    token = await getHDUToken(stuData.stu_num.toString(),stuData.stu_pin)
+    let res = await ctx.pgdb.updateStu(parseInt(stuData.user_id.toString()) ,undefined,undefined,undefined,token)
+  }
+  catch(e){
+    console.log(e);
+    token = stuData.token
+  }
+  console.log(13123132);
   let course = await getHDUcourse(token)
   let dater = new Date().getTime()
   let date = new Date(dater - 4 * 60 * 60 * 1000)

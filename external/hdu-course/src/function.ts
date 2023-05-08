@@ -35,6 +35,7 @@ export async function getHDUcourse(token:string) {
   }
   // let time = year + '-' + month + '-' + day
   let res = await axios.get({ uri: courseApi, headers: courseHeaders,data: params})
+  console.log(res.body);
   let courseData = JSON.parse(res.body)
   let week = courseData.week
   courseData = courseData.list
@@ -100,6 +101,7 @@ export async function getHDUToken(un,pd) {
   })
   // 获取cookie
   let data = res.body
+  console.log(data)
   let tail = data.split(/name="lt" value="/)[1]
   let exec = data.split(/name="execution" value="/)[1]
   hduIdentity.lt = tail.split('" />')[0]
