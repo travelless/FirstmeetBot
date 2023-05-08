@@ -10,7 +10,6 @@ const headers = {
 let axios = new Axios()
 
 export async function getHDUcourse(token:string) {
-  console.log(token);
   let courseApi = 'https://skl.hdu.edu.cn/api/course'
   let courseHeaders = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0',
@@ -37,7 +36,6 @@ export async function getHDUcourse(token:string) {
   // let time = year + '-' + month + '-' + day
   let res = await axios.get({ uri: courseApi, headers: courseHeaders,data: params})
   let courseData = JSON.parse(res.body)
-
   let week = courseData.week
   courseData = courseData.list
   let course = []

@@ -37,8 +37,8 @@ export async function apply(ctx: Context) {
 }
 
 export async function course(stuData){
-  let token = stuData.token
-  console.log(stuData);
+  // let token = stuData.token
+  let token = await getHDUToken(stuData.stu_num.toString(),stuData.stu_pin)
   let course = await getHDUcourse(token)
   let dater = new Date().getTime()
   let date = new Date(dater - 4 * 60 * 60 * 1000)
