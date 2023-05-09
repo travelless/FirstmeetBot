@@ -44,10 +44,10 @@ export async function course(stuData,ctx){
     console.log(e);
     token = stuData.token
   }
-  console.log(13123132);
   let course = await getHDUcourse(token)
+  console.log(course);
   let dater = new Date().getTime()
-  let date = new Date(dater - 4 * 60 * 60 * 1000)
+  let date = new Date(dater)
   let weekday = (date.getDay()).toString()
   switch(weekday) {
     case '1': weekday = '一'; break;
@@ -59,7 +59,7 @@ export async function course(stuData,ctx){
     case '0': weekday = '日'; break;
   }
   let message = `<>
-  <p>今日课表   星期${weekday}</p>
+  <p>--- 今日课表   星期${weekday} ---</p>
   `
   if(course.length === 0){
     message += `<p>--- 今日无课,勾栏听曲！---</p>`

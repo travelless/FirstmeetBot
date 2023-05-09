@@ -17,16 +17,24 @@ export async function getHDUcourse(token:string) {
     'x-auth-token': token,
   }
   let dater = new Date().getTime()
-  let date = new Date(dater + 4 * 60 * 60 * 1000)
-  let date2 = new Date(dater - 4 * 60 * 60 * 1000)
+  let date = new Date()
+  // let date2 = new Date(dater - 4 * 60 * 60 * 1000)
+  // console.log('data2'+date2);
+  // console.log('data'+date);
+  // console.log('datar'+new Date());
   let now = date.getTime()
   // 获得年月日
   let year = date.getFullYear()
   let month:any = date.getMonth() + 1
+  let day:any
   if(month < 10) {
     month = '0' + month.toString()
   }
-  let day:any = date.getDay() - date.getDay() + 1
+  if(date.getDay() === 0){
+    day = date.getDate() - 6
+  }else{
+    day = date.getDate() - date.getDay() + 1
+  }
   if(day < 10) {
     day = '0' + day.toString()
   }
@@ -35,14 +43,21 @@ export async function getHDUcourse(token:string) {
   }
   // let time = year + '-' + month + '-' + day
   let res = await axios.get({ uri: courseApi, headers: courseHeaders,data: params})
-  console.log(res.body);
   let courseData = JSON.parse(res.body)
   let week = courseData.week
+  let xq = courseData.xq
   courseData = courseData.list
   let course = []
+
   for(let item of courseData) {
+    // console.log('item.startWeek:'+item.startWeek);
+    // console.log('item.endWeek:'+item.endWeek);
+    // console.log('week:'+week);
+    // if(item.weekDay === 2){
+    //   console.log(item);
+    // }
     if(item.startWeek <= week && item.endWeek >= week) {
-      if(item.weekDay ===  date2.getDay()) {
+      if(item.weekDay ===  date.getDay()) {
         let courseItem = {
           courseName: '',
           classRoom: '',
@@ -76,12 +91,16 @@ export function getModule(course){
   } else {
     time = '晚上'
   }
+  //<face id="198"></face>
+  // <face id="199"></face>
+  // <face id="63"></face>
+  // <face id="89"></face>
   return `
-   ---  ${time} 第${course.startSection}-${course.endSection}节 ---
-  <p><face id="198"></face> ${course.courseName}</p>
-  <p><face id="199"></face> ${course.classRoom}</p>
-  <p><face id="63"></face> 教师 ${course.teacherName}</p>
-  <p><face id="89"></face> ${course.mark} 学分</p>
+  <p> 时间: ${time} 第${course.startSection}-${course.endSection}节</p>
+  <p> 课程: ${course.courseName}</p>
+  <p> 教室: ${course.classRoom}</p>
+  <p> 教师: ${course.teacherName}</p>
+  <p>-------</p>
   `
 }
 
@@ -101,7 +120,7 @@ export async function getHDUToken(un,pd) {
   })
   // 获取cookie
   let data = res.body
-  console.log(data)
+  // console.log(data)
   let tail = data.split(/name="lt" value="/)[1]
   let exec = data.split(/name="execution" value="/)[1]
   hduIdentity.lt = tail.split('" />')[0]
