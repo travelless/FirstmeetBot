@@ -7,19 +7,37 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
-/// We could not retrieve columns for the underlying table. Either it has none or you are missing rights to see them. Please check your privileges.
-// model user_info {
-// }
+model chat_history {
+  id          Int      @id @default(autoincrement())
+  group_id    BigInt?  @unique(map: "chat_history_idx1")
+  text        String?
+  plain_text  String?
+  create_time DateTime @db.Timestamptz(6)
+  user_id     BigInt
+}
 
-/// We could not retrieve columns for the underlying table. Either it has none or you are missing rights to see them. Please check your privileges.
-// model group_info {
-// }
+model group_info {
+  id           Int      @id @default(autoincrement())
+  group_id     BigInt   @unique(map: "group_info_idx1")
+  group_name   String   @db.VarChar
+  member_count Int
+  group_flag   Int
+  create_time  DateTime @db.Timestamp(6)
+}
 
-/// We could not retrieve columns for the underlying table. Either it has none or you are missing rights to see them. Please check your privileges.
-// model chat_history {
-// }
+model user_info {
+  id            Int      @id @default(autoincrement())
+  user_id       BigInt   @unique(map: "user_info_idx1")
+  user_name     String   @db.VarChar
+  nickname      String?  @db.VarChar
+  befriend_time DateTime @db.Timestamp(6)
+}
 
-/// We could not retrieve columns for the underlying table. Either it has none or you are missing rights to see them. Please check your privileges.
-// model user_school_info {
-// }
+model user_school_info {
+  id      Int     @id @default(autoincrement())
+  school  String
+  token   String?
+  user_id BigInt  @unique(map: "user_school_info_idx1")
+  stu_num BigInt
+  stu_pin String
+}

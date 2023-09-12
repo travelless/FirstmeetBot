@@ -41,8 +41,7 @@ export async function getHDUcourse(token:string) {
   let params = {
     'startTime': year + '-' + month + '-' + day
   }
-  // let time = year + '-' + month + '-' + day
-  let res = await axios.get({ uri: courseApi, headers: courseHeaders,data: params})
+  let res = await axios.get({ uri: courseApi, headers: courseHeaders,data: params}) 
   let courseData = JSON.parse(res.body)
   let week = courseData.week
   let xq = courseData.xq
@@ -50,12 +49,6 @@ export async function getHDUcourse(token:string) {
   let course = []
 
   for(let item of courseData) {
-    // console.log('item.startWeek:'+item.startWeek);
-    // console.log('item.endWeek:'+item.endWeek);
-    // console.log('week:'+week);
-    // if(item.weekDay === 2){
-    //   console.log(item);
-    // }
     if(item.startWeek <= week && item.endWeek >= week) {
       if(item.weekDay ===  date.getDay()) {
         let courseItem = {
@@ -78,7 +71,7 @@ export async function getHDUcourse(token:string) {
       }
     }
   }
-  course.sort((a, b) => b.startSection - a.startSection);
+  course.sort((a, b)  => b.startSection - a.startSection);
   return course
 }
 
@@ -118,6 +111,7 @@ export async function getHDUToken(un,pd) {
     uri: hduUrl,
     headers: headers
   })
+
   // 获取cookie
   let data = res.body
   // console.log(data)
@@ -129,8 +123,9 @@ export async function getHDUToken(un,pd) {
   hduIdentity.execution = exec.split('" />')[0]
   hduIdentity.rsa = strEnc(un + pd + hduIdentity.lt, '1', '2', '3')
   res = await axios.post({ uri: hduUrl, headers: headers, form: hduIdentity})
+  res = await axios.get({ uri: res.headers['location'], headers: headers }) 
   res = await axios.get({ uri: res.headers['location'], headers: headers })
-  res = await axios.get({ uri: res.headers['location'], headers: headers })
-  res = await axios.get({ uri: res.headers['location'], headers: headers })
+  res = await axios.get({ uri: res.headers['location'], headers: headers }) 
+  console.log(res.headers['x-auth-token']);
   return res.headers['x-auth-token']
 }

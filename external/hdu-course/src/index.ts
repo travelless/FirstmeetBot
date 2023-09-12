@@ -12,16 +12,29 @@ export const Config: Schema<Config> = Schema.object({})
 export async function apply(ctx: Context) {
   // let token = await getToken(un,pd)
   // set指令 设置学业信息
-  ctx.command('set <schoolName:string> <stuNum:number> <stuPin:string> [userId]', '设置学业信息')
-    .action(async ({ session }, schoolName, stuNum, stuPin, userId) => {
-      let user_id
+  // ctx.command('set <schoolName:string> <stuNum:number> <stuPin:string> [userId]', '设置学业信息')
+  // .action(async ({ session }, schoolName, stuNum, stuPin, userId) => {
+  ctx.command('set <stuNum:number> <stuPin:string> [userId]', '设置学业信息')
+    .action(async ({ session }, stuNum, stuPin, userId) => {
+      let schoolName = 'hdu'
+      if(!stuNum || !stuPin){
+        return `<p>指令格式为 set <学号> <智慧杭电密码></p>
+        <p>请按正确格式输入指令</p>`
+      }
+      let user_id, token
       if(userId !== undefined && session.userId === process.env.MASTER_ID ){
         user_id = userId
       } else{
         user_id = session.userId
       }
-      let token = await getHDUToken(stuNum.toString(),stuPin)
-      let res = await ctx.pgdb.addStu(parseInt(user_id) , schoolName, stuNum, stuPin, token)
+      // try{
+      //   token = await getHDUToken(stuNum.toString(),stuPin)
+      // }
+      // catch(e){
+      //   console.log(e);
+      //   return '用户名或密码错误'
+      // }
+      let res = await ctx.pgdb.addStu(parseInt(user_id) , schoolName, stuNum, stuPin)
       console.log(res);
       return '设置成功'
     })
@@ -30,6 +43,10 @@ export async function apply(ctx: Context) {
     .action(async({ session }) => {
       let user_id = parseInt(session.userId)
       let stuData = await ctx.pgdb.getStu(user_id)
+      if(!stuData){
+        return `<p>用户不存在</p>
+        <p>请将我添加为好友后使用set指令进行账号绑定</p>`
+      }
       return await course(stuData,ctx)
     })
 }
@@ -44,8 +61,8 @@ export async function course(stuData,ctx){
     console.log(e);
     token = stuData.token
   }
+  console.log(token);
   let course = await getHDUcourse(token)
-  console.log(course);
   let dater = new Date().getTime()
   let date = new Date(dater)
   let weekday = (date.getDay()).toString()
